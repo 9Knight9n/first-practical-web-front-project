@@ -1,0 +1,61 @@
+/* Main Styles */
+
+/* Variables declarations */
+
+:root {
+    --primary-color: #4033FF;
+    --secondary-color: #F8F8FF;
+    --primary-text-color: #000000;
+    --secondary-text-color: #ffffff;
+}
+
+/* Navbar css */
+
+nav {
+    padding: 1.75rem;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+nav img {
+    fill: var(--secondary-text-color);
+    filter: brightness(2.5);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a:hover {
+    /*background-color: var(--secondary-color);*/
+}
+
+nav ul li a {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
+
+
+
+/* explore section*/
+
+section.explore {
+    background-image: url("../assets/images/Vector-Smart-Object.jpg");
+    background-repeat: no-repeat;
+    margin-top: -5rem;
+    height: 600px;
+    background-size: 100% 70%;
+}
+
+
+section.explore:first-child {
+    position: absolute;
+    margin-left: auto;
+
+}
