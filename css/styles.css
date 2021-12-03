@@ -12,16 +12,19 @@
 /* Navbar css */
 
 nav {
-    postion: fixed;
+    position: fixed;
+
+    /* ToDo: Don't know why this is needed */
+    width: 100%;
+
     padding: 1.75rem;
-    background-color: var(--primary-color);
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 nav img {
-    fill: var(--secondary-text-color);
     filter: brightness(2.5);
 }
 
@@ -47,31 +50,61 @@ nav ul li a {
 
 
 
-/* explore section*/
 
-section.explore {
+
+/* first section*/
+
+header + section {
+
+    /* ToDo: should check for better solution*/
+    padding-top: 80px;
+
     background-image: url("../assets/images/Vector-Smart-Object.jpg");
-    background-repeat: no-repeat;
-    height: 600px;
-    background-size: 100% 70%;
+    background-repeat: repeat-x;
+    background-position: top;
+    height: 100vh;
+    background-size: 130% 100%;
     display: flex;
 }
-section.explore > div:first-child {
-    display: flex ;
-    align-items: center;
-    justify-content: center;
+
+header + section > article:first-child {
+    /*display: flex ;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
     height: 100%;
     width: 50%;
 }
 
-
-section.explore > div:nth-child(2) {
-    display: flex ;
+header + section > article:nth-child(2) {
+    /*display: flex ;*/
+    position: relative;
     height: 100%;
     width: 50%;
 }
 
-section.explore > div:nth-child(2)> img:first-child {
-    width: 70%;
+header + section > article:nth-child(2) > img {
+    position: absolute;
+}
 
+header + section > article:nth-child(2) > img:first-child {
+    width: 65%;
+    left: 20%;
+    top: 10%;
+}
+
+header + section > article:nth-child(2) > img:nth-child(2) {
+    width: 20%;
+    top: 53%;
+}
+
+header + section > article:nth-child(2) > img:nth-child(3) {
+    width: 40%;
+    top: 40%;
+    left: 30%;
+}
+
+header + section > article:nth-child(2) > img:nth-child(4) {
+    width: 28%;
+    top: 38%;
+    left: 21%;
 }
