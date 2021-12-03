@@ -94,7 +94,7 @@ header + section > article:first-child {
     display: flex ;
     flex-direction: column;
     justify-content: center;
-    padding: 7rem;
+    padding: 0 7%;
     height: 100%;
     width: 50%;
 }
@@ -112,6 +112,22 @@ header + section > article:first-child *:first-child,
 header + section > article:first-child *:nth-child(2) {
     font-weight: bold;
     margin-bottom: 2rem;
+}
+
+header + section > article:first-child button {
+    width: fit-content;
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    margin: 3rem 0;
+    padding: 0.5rem 2rem;
+    outline: none;
+}
+
+header + section > article:first-child button:hover {
+    opacity: 0.8;
 }
 
 header + section > article:nth-child(2) {
