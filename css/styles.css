@@ -52,33 +52,26 @@ nav ul li a {
 section.explore {
     background-image: url("../assets/images/Vector-Smart-Object.jpg");
     background-repeat: no-repeat;
-    margin-top: -5rem;
     height: 600px;
     background-size: 100% 70%;
+    display: flex;
 }
-
 section.explore > div:first-child {
-    position: absolute;
     display: flex ;
-    justify-content: space-around;
-    height: 300px;
-    width: 100%;
-    background-color: greenyellow;
-}
-
-section.explore > div:first-child > div {
-    display: flex ;
-    background-color: blue;
-    width: 20%;
+    align-items: center;
+    justify-content: center;
     height: 100%;
+    width: 50%;
 }
 
-section.explore > div:first-child > div:first-child {
-    justify-content: space-evenly;
+
+section.explore > div:nth-child(2) {
+    display: flex ;
+    height: 100%;
+    width: 50%;
 }
-section.explore > div:first-child > div:nth-child(2) {
-    justify-content: space-between;
-}
-section.explore > div:first-child > div:last-child {
-    justify-content: space-around;
+
+section.explore > div:nth-child(2)> img:first-child {
+    width: 70%;
+
 }
