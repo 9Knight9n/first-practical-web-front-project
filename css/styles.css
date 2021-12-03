@@ -12,6 +12,10 @@
     --secondary-text-color: #ffffff;
 }
 
+* {
+    font-family: serif;
+}
+
 
 
 
@@ -23,7 +27,7 @@ nav {
     /* ToDo: Don't know why this is needed */
     width: 100%;
 
-    padding: 1.75rem;
+    padding: 2rem 1.75rem ;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
@@ -60,6 +64,7 @@ nav ul li a:hover {
 }
 
 nav ul li a {
+    font-weight: bold;
     padding: 0.5rem;
     text-decoration: none;
     color: var(--secondary-text-color);
@@ -74,7 +79,7 @@ nav ul li a {
 header + section {
 
     /* ToDo: should check for better solution*/
-    padding-top: 80px;
+    padding-top: 88px;
 
     background-image: url("../assets/images/Vector-Smart-Object.jpg");
     background-repeat: repeat-x;
