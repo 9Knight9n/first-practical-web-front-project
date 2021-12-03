@@ -14,6 +14,7 @@
 
 * {
     font-family: serif;
+    color: var(--primary-text-color);
 }
 
 
@@ -90,15 +91,30 @@ header + section {
 }
 
 header + section > article:first-child {
-    /*display: flex ;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7rem;
     height: 100%;
     width: 50%;
 }
 
+header + section > article:first-child *{
+    color: var(--secondary-text-color);
+}
+
+header + section > article:first-child *:nth-child(2n-1) {
+    opacity: 0.6;
+    line-height: 1.5rem;
+}
+
+header + section > article:first-child *:first-child,
+header + section > article:first-child *:nth-child(2) {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
 header + section > article:nth-child(2) {
-    /*display: flex ;*/
     position: relative;
     height: 100%;
     width: 50%;
