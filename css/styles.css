@@ -1,5 +1,8 @@
 /* Main Styles */
 
+
+
+
 /* Variables declarations */
 
 :root {
@@ -8,6 +11,9 @@
     --primary-text-color: #000000;
     --secondary-text-color: #ffffff;
 }
+
+
+
 
 /* Navbar css */
 
@@ -35,6 +41,17 @@ nav ul {
 
 nav ul li {
     display: inline;
+}
+
+nav ul li + svg {
+    margin-left: 3rem;
+}
+
+nav ul svg {
+    width:1rem;
+    height:1rem;
+    fill: var(--secondary-text-color);
+    margin-right: 0.5rem;
 }
 
 nav ul li a:hover {
