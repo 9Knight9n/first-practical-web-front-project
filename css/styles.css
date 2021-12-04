@@ -134,6 +134,8 @@ header + section > article:first-child button:hover {
 }
 
 header + section > article:nth-child(2) {
+    display: flex;
+    flex-direction: column;
     position: relative;
     height: 100%;
     width: 50%;
@@ -175,11 +177,14 @@ section:nth-child(3) {
     margin-top: 8rem;
     display: flex;
     justify-content: center;
+    padding: 0 10rem ;
+}
+
+section:nth-child(3) > article:not(:last-child) {
+    margin-right: 10%;
 }
 
 section:nth-child(3) > article {
-    margin: 0 2rem;
-    /*width: 15%;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
