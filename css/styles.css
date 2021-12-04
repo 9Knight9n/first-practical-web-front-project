@@ -7,7 +7,8 @@
 
 :root {
     --primary-color: #4033FF;
-    --secondary-color: #c9c9c9;
+    --secondary-color: #F8F8FF;
+    --auxiliary-color : #EAEAFD;
     --primary-text-color: #000000;
     --secondary-text-color: #ffffff;
     --max-z-index: 100;
@@ -62,7 +63,7 @@ nav ul svg {
 
 nav ul li a:hover {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--auxiliary-color);
 }
 
 nav ul li a {
@@ -178,7 +179,7 @@ section:nth-child(3) {
 
 section:nth-child(3) > article {
     margin: 0 2rem;
-    width: 15%;
+    /*width: 15%;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -323,4 +324,90 @@ section.intro-video h5{
 section.intro-video h5:before {
     content: "+ ";
     color: var(--primary-color);
+}
+
+
+
+
+
+/* sixth section*/
+
+section.plan {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 0;
+}
+
+section.plan > h5 {
+    opacity: 0.6;
+}
+
+section.plan > h5 , section.plan > h1{
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+section.plan div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+section.plan article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 1rem;
+    width: 22%;
+}
+
+section.plan article:nth-child(2) {
+    background-color: var(--secondary-text-color);
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+section.plan article:nth-child(2) button {
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+}
+
+section.plan article:nth-child(2) button:hover {
+    background-color: var(--auxiliary-color);
+    color: var(--primary-color);
+}
+
+section.plan article h1 {
+    font-size: xxx-large;
+}
+
+section.plan article h6:first-child,section.plan article h1 {
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+}
+
+section.plan article h6:not(:first-child) {
+    margin-top: 1rem;
+    opacity: 0.6;
+    text-align: center;
+}
+
+section.plan button {
+    width: fit-content;
+    background-color: var(--auxiliary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    margin: 3rem 0;
+    padding: 0.5rem 2rem;
+    outline: none;
+}
+
+section.plan button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
 }
