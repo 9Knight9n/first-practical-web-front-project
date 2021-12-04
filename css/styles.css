@@ -226,8 +226,41 @@ section:nth-child(4) > article > *:nth-child(2n-1) {
     opacity: 0.6;
     line-height: 2rem;
 }
+
 section:nth-child(4) > article > *:first-child,
 section:nth-child(4) > article > *:nth-child(2) {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+/* forth section*/
+
+section:nth-child(5) {
+    margin: 15rem 0 0 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+section:nth-child(5) > article {
+    margin: 0 2.5rem  0 0;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section:nth-child(5) > article > *:nth-child(2n-1) {
+    opacity: 0.6;
+    line-height: 2rem;
+}
+
+section:nth-child(5) > article > *:first-child,
+section:nth-child(5) > article > *:nth-child(2) {
     font-weight: bold;
     margin-bottom: 2rem;
 }
