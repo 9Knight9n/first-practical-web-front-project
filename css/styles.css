@@ -265,3 +265,62 @@ section:nth-child(5) > article > *:nth-child(2) {
     margin-bottom: 2rem;
 }
 
+
+
+
+
+/* fifth section*/
+
+section.intro-video {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.intro-video > h5 {
+    opacity: 0.6;
+}
+
+section.intro-video > h5 , section.intro-video > h1{
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+section.intro-video > div{
+    margin-top: 2rem;
+    width: 80%;
+    height: auto;
+}
+
+section.intro-video > article {
+    display: flex;
+    width: 80%;
+}
+
+section.intro-video > article > article {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 7rem 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+section.intro-video h2 {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+section.intro-video h6 {
+    opacity: 0.6;
+    line-height: 2rem;
+}
+
+section.intro-video h5{
+    line-height: 2rem;
+}
+
+section.intro-video h5:before {
+    content: "+ ";
+    color: var(--primary-color);
+}
