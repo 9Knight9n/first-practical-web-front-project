@@ -10,6 +10,7 @@
     --secondary-color: #c9c9c9;
     --primary-text-color: #000000;
     --secondary-text-color: #ffffff;
+    --max-z-index: 100;
 }
 
 * {
@@ -24,12 +25,13 @@
 
 nav {
     position: fixed;
+    z-index: var(--max-z-index);
 
     /* ToDo: Don't know why this is needed */
     width: 100%;
 
     padding: 2rem 1.75rem ;
-    background-color: transparent;
+    background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +56,6 @@ nav ul li + svg {
 
 nav ul svg {
     width:1rem;
-    height:1rem;
     fill: var(--secondary-text-color);
     margin-right: 0.5rem;
 }
@@ -108,6 +109,7 @@ header + section > article:first-child *:nth-child(2n-1) {
     line-height: 1.5rem;
 }
 
+/* ToDo: Find way to extract similar selectors */
 header + section > article:first-child *:first-child,
 header + section > article:first-child *:nth-child(2) {
     font-weight: bold;
@@ -161,4 +163,41 @@ header + section > article:nth-child(2) > img:nth-child(4) {
     width: 28%;
     top: 38%;
     left: 21%;
+}
+
+
+
+
+/* second section*/
+
+section:nth-child(3) {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+section:nth-child(3) > article {
+    margin: 0 2rem;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section:nth-child(3) > article > svg {
+    width:5rem;
+    fill: var(--primary-color);
+    margin-bottom: 2.5rem;
+}
+
+section:nth-child(3) > article > p:nth-child(2) {
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 2rem;
+}
+
+section:nth-child(3) > article > p:nth-child(3) {
+    opacity: 0.6;
+    text-align: center;
 }
