@@ -508,7 +508,6 @@ section.subscribe form {
 }
 
 section.subscribe input {
-    box-sizing: border-box;
     flex-grow: 1;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
@@ -525,4 +524,11 @@ section.subscribe button:hover  {
     background-color: var(--auxiliary-color);
     color: var(--primary-color);
 }
+
+
+
+
+/* ninth section*/
+
+
 
