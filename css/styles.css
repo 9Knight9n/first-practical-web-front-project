@@ -546,7 +546,7 @@ section.tech article {
     flex-direction: column;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     position: relative;
-    z-index: var(--max-z-index);
+    /*z-index: var(--max-z-index);*/
 }
 
 section.tech article:not(:last-child) {
@@ -621,6 +621,7 @@ section.tech article > div:first-child{
     justify-content: center;
     align-items: center;
 }
+
 
 
 
