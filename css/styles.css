@@ -624,4 +624,18 @@ section.tech article > div:first-child{
 
 
 
+/*tenth section*/
+
+section.partner {
+    display: flex;
+    margin: 7rem 14rem 14rem 14rem;
+    justify-content: space-between;
+}
+section.partner img{
+    margin:0 2rem;
+}
+
+section.partner img{
+    width: 100%;
+}
 
