@@ -7,7 +7,7 @@
 
 :root {
     --primary-color: #4033FF;
-    --secondary-color: #F8F8FF;
+    --secondary-color: #f5f5ff;
     --auxiliary-color : #EAEAFD;
     --primary-text-color: #000000;
     --secondary-text-color: #ffffff;
@@ -17,6 +17,22 @@
 * {
     font-family: serif;
     color: var(--primary-text-color);
+}
+
+h5,h6{
+    line-height: 2rem;
+}
+
+h1{
+    line-height: 3rem;
+}
+
+h1,h5 {
+    font-weight: bold;
+}
+
+h5,h6 {
+    opacity: 0.6;
 }
 
 
@@ -414,3 +430,49 @@ section.plan button:hover {
     background-color: var(--primary-color);
     color: var(--secondary-text-color);
 }
+
+
+
+
+/* seventh section*/
+
+
+section.feedback {
+    position: relative;
+    display: flex;
+    padding: 10rem 10rem;
+    align-items: center;
+}
+
+section.feedback article{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.feedback article:not(:first-child){
+    margin-left: 2rem;
+    background-color: var(--secondary-color);
+    padding: 6rem 3rem;
+}
+
+section.feedback p {
+    margin-top: 3rem;
+    font-weight: bold;
+}
+
+
+section.feedback article img {
+    border-radius: 70px;
+    margin-right: 80%;
+    margin-bottom: 3rem;
+}
+
+section.feedback > img {
+    position: absolute;
+    z-index: -1;
+    left: 46%;
+    top: 1%;
+}
+
