@@ -1,0 +1,73 @@
+body.auth {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(110deg, var(--secondary-text-color) 45%, var(--primary-color) calc(45% + 3px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.auth section{
+    height: 80%;
+    width: 80%;
+    box-shadow: 1px 1px 20px 5px rgba(0,0,0,.40);
+    display: flex;
+}
+
+body.auth article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body.auth article:first-child {
+    width: 45%;
+}
+body.auth article:last-child {
+    width: 55%;
+}
+
+body.auth img {
+    margin-bottom: 2rem;
+    transform: scale(2);
+    /*margin: 55% 0;*/
+}
+
+body.auth form {
+    display: flex;
+    flex-direction: column;
+}
+
+body.auth form label{
+    color: var(--secondary-text-color);
+}
+
+body.auth form input{
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+body.auth input::placeholder{
+    font-size: smaller;
+}
+
+body.auth button {
+    margin-top: 1rem;
+    background-color: #4D7DF9;
+    color: var(--secondary-text-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    outline: none;
+}
+
+body.auth button:hover {
+    background-color: var(--auxiliary-color);
+    color: var(--primary-color);
+}
