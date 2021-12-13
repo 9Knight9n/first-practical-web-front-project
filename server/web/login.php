@@ -3,8 +3,8 @@
 //  max email length is 30
 //  max password length is 16
 
-    require
-    print_r($_POST)
+    require '../helper/dbconnect.php';
+    print_r($_POST);
 
 
 
