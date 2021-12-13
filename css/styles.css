@@ -61,6 +61,7 @@ nav img {
 nav ul {
     list-style-type: none;
     margin-bottom: 0;
+    display: flex;
 }
 
 nav ul li {
@@ -78,13 +79,23 @@ nav ul svg {
 }
 
 nav ul li a:hover {
+    background-color: var(--secondary-color);
     text-decoration: none;
-    color: var(--auxiliary-color);
+    color: var(--primary-color);
+}
+
+nav ul div {
+    display: flex;
 }
 
 nav ul li a {
+    font-size: large;
+    transition-property: background-color,color;
+    transition-duration: 0.5s;
+    margin-left: 0.75rem;
+    border-radius: 20px;
     font-weight: bold;
-    padding: 0.5rem;
+    padding: 0.6rem 1rem;
     text-decoration: none;
     color: var(--secondary-text-color);
 }

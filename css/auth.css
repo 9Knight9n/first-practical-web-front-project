@@ -9,7 +9,7 @@ body.auth {
 
 body.auth section{
     height: 80%;
-    width: 80%;
+    width: 70%;
     box-shadow: 1px 1px 20px 5px rgba(0,0,0,.40);
     display: flex;
 }
@@ -19,23 +19,29 @@ body.auth article {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 body.auth article:first-child {
-    width: 45%;
+    width: 40%;
 }
 body.auth article:last-child {
-    width: 55%;
+    width: 60%;
+    padding: 0 13%;
 }
 
 body.auth img {
     margin-bottom: 2rem;
     transform: scale(2);
+    padding: 0 40%;
     /*margin: 55% 0;*/
+}
+body.auth article:first-child small{
+    align-self: center;
 }
 
 body.auth form {
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -70,4 +76,8 @@ body.auth button {
 body.auth button:hover {
     background-color: var(--auxiliary-color);
     color: var(--primary-color);
+}
+
+body.auth small {
+    font-weight: bold;
 }
