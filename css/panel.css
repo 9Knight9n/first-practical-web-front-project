@@ -1,5 +1,6 @@
 :root {
     --primary-color: #4033FF;
+    --primary-color-dark: #372bc7;
     --secondary-color: #2d2da6;
     --auxiliary-color : #EAEAFD;
     --primary-text-color: #000000;
@@ -20,12 +21,24 @@ body{
 /*panel-content*/
 #panel-content{
     flex-grow: 1;
+    margin: 4rem;
+    background-color: var(--auxiliary-color);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+#panel-content article {
+    display: flex;
 }
 
 
 
 
 /*right-sidebar*/
+.right-sidebar a,.right-sidebar a:hover {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
 .right-sidebar {
     padding: 1rem 0;
     display: flex;
@@ -37,7 +50,7 @@ body{
     margin: 1.5rem;
     filter: brightness(2.5);
 }
-.right-sidebar a{
+.right-sidebar div a{
     /*display: flex;*/
     /*justify-content: space-between;*/
     font-size: larger;
@@ -50,15 +63,10 @@ body{
     user-select: none;
     font-weight: bold;
 }
-.right-sidebar a:hover{
+.right-sidebar div a:hover{
     padding-right: 3rem;
     padding-left: 1rem;
 }
-
-/*#right-sidebar-content-manager:before , #right-sidebar-comment-manager:before {*/
-/*    content: "<";*/
-/*    align-self: flex-start;*/
-/*}*/
 
 .right-sidebar div {
     display: flex;
@@ -76,7 +84,7 @@ body{
 }
 
 .right-sidebar div.active p,.right-sidebar div.active a{
-    color: var(--primary-text-color);
+    color: var(--primary-color-dark);
 }
 
 .right-sidebar div p {
@@ -86,16 +94,39 @@ body{
 }
 
 .right-sidebar li {
+    cursor: pointer;
     text-align: end;
-    padding: 1rem 4rem 0.5rem 0;
+    padding: 1rem 3rem 0.5rem 0;
     color: var(--secondary-text-color);
-
+    transition-property: padding-right,padding-left;
+    transition-duration: 0.25s;
+    margin: 0.5rem 0;
 }
 
+.right-sidebar li:hover {
+    padding-right: 4rem;
+}
 .right-sidebar ul {
-    max-height: 0;
-    height: 0;
+    background-color: var(--primary-color-dark);
     overflow-y: hidden;
     transition-property: max-height;
     transition-duration: 2s;
+}
+.right-sidebar ul:not(.active-sub) {
+    /*padding: 0.5rem 0;*/
+    max-height: 0;
+    height: 0;
+
+}
+.right-sidebar ul.active-sub{
+    max-height: 500px;
+    height: auto;
+}
+.right-sidebar ul li.active-sub {
+    background-color: var(--secondary-text-color);
+    margin-right: 1rem;
+    border-radius: 0 10px 10px 0;
+}
+.right-sidebar ul li.active-sub a {
+    color: var(--primary-color-dark);
 }

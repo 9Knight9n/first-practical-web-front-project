@@ -9,13 +9,12 @@ function expandSubMenu (e){
     if(targetDiv.className !== "active")
     {
         activateSubMenu(targetDiv);
-        if (nextSibling.nodeName === "UL")
+        if (nextSibling && nextSibling.nodeName === "UL")
         {
+            targetDiv.className = ""
             nextSibling.style.maxHeight = "500px";
             nextSibling.style.height = "auto";
         }
-
-
     }
 }
 
@@ -36,11 +35,41 @@ function activateSubMenu(targetDiv){
 
         firstChild = firstChild.nextSibling;
     }
+
     targetDiv.className = "active"
 }
-
 
 let rightSidebarSubMenu = document.querySelectorAll(".right-sidebar div");
 for (let i = 0; i < rightSidebarSubMenu.length; i++) {
     rightSidebarSubMenu[i].onclick = expandSubMenu;
 }
+
+
+// function changePanelContent(e)
+// {
+//
+//     let firstChild = document.getElementById("panel-content").firstChild;
+//
+//     while (firstChild.nextSibling !== null)
+//     {
+//         console.log(e.target)
+//         if (firstChild.id === e.target.id+"-panel")
+//         {
+//             // console.log(firstChild.id," === ",e.target.id+"-panel")
+//             if(firstChild.style)
+//                 firstChild.style.display = 'flex';
+//         }
+//         else
+//         {
+//             if(firstChild.style)
+//                 firstChild.style.display = "none";
+//         }
+//
+//         firstChild = firstChild.nextSibling;
+//     }
+// }
+
+// let rightSidebarSubMenuContent = document.querySelectorAll(".right-sidebar div a");
+// for (let i = 0; i < rightSidebarSubMenu.length; i++) {
+//     rightSidebarSubMenuContent[i].onclick = changePanelContent;
+// }
