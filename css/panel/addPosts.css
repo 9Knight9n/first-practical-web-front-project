@@ -1,0 +1,55 @@
+
+
+
+
+#panel-content > form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#panel-content .left {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+}
+
+#panel-content .left button {
+    width: fit-content;
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    margin: 3rem 0;
+    padding: 0.5rem 2rem;
+    outline: none;
+    cursor: pointer ;
+}
+
+#panel-content .left button:hover{
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+}
+
+#panel-content .left div {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#panel-content .left div label{
+    margin-top: 0.5rem;
+}
+
+#panel-content .right {
+    padding: 2rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
