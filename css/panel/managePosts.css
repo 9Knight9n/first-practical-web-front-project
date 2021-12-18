@@ -43,4 +43,10 @@
     margin: 0 0.5rem;
     padding: 0.5rem 2rem;
     outline: none;
+    cursor: pointer;
+}
+
+#panel-content .table button:hover{
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
 }

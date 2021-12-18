@@ -1,0 +1,17 @@
+#panel-content .add-tag button {
+    /*width: 50%;*/
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    padding: 0.5rem 2rem;
+    outline: none;
+    cursor: pointer;
+}
+
+#panel-content .add-tag button:hover{
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+}
