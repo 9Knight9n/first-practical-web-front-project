@@ -32,6 +32,9 @@ body{
 
 /*right-sidebar*/
 .right-sidebar a,.right-sidebar a:hover {
+    /*display: block;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
     text-decoration: none;
     color: var(--secondary-text-color);
 }

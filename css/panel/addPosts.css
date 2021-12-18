@@ -53,3 +53,7 @@
     flex-direction: column;
     overflow: hidden;
 }
+
+.tox-tinymce {
+    height: 100% !important;
+}

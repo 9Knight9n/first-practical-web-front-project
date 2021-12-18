@@ -1,0 +1,46 @@
+#panel-content .table tr {
+    border-bottom: 1px solid black;
+
+}
+
+#panel-content .table th,#panel-content .table td{
+    border: 1px solid black;
+    padding: 1rem;
+    text-align: right;
+}
+#panel-content .table {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+#panel-content .table h5{
+    margin-bottom: 2rem;
+}
+
+#panel-content .table table{
+    width: 100%;
+}
+
+#panel-content .table table tr{
+
+}
+
+#panel-content .table td:first-child div{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+}
+
+#panel-content .table button{
+    width: 50%;
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    padding: 0.5rem 2rem;
+    outline: none;
+}
