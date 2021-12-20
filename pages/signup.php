@@ -20,14 +20,21 @@
                 <small>Lorem ipsum dolor sit amet.</small>
             </article>
             <article>
-                <form>
+                <form style="position: relative" method="POST" action="../server/web/signup.php">
+                    <?php
+                    session_start();
+                    if(isset($_SESSION['error']))
+                        echo '<h6 style="color:white;margin-bottom: 1rem;opacity: 1;top:-50px;background-color: red;border-radius: 5px;padding: 0.3rem 1rem">'.$_SESSION['error'].'</h6> ';
+                    session_abort();
+                    ?>
                     <small><label for="login-email">Your email:</label></small>
-                    <input type="text" id="login-email" placeholder="Enter your email">
+                    <input name="email" type="text" id="login-email" placeholder="Enter your email">
                     <small><label for="login-pass">Password:</label></small>
-                    <input type="password" id="login-pass" placeholder="Enter your password">
+                    <input name="password" type="password" id="login-pass" placeholder="Enter your password">
                     <small><label for="login-pass2">Confirm password:</label></small>
-                    <input type="password" id="login-pass2" placeholder="Enter your password again">
+                    <input name="confirm_password" type="password" id="login-pass2" placeholder="Enter your password again">
                     <button type="submit">Sign up</button>
+
                 </form>
             </article>
         </section>
