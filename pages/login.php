@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Sign up</title>
+        <title>Login</title>
 
     <!--    ToDo: should load css again?-->
         <link rel="stylesheet" href="../css/reset.css">
@@ -20,25 +20,21 @@
                 <small>Lorem ipsum dolor sit amet.</small>
             </article>
             <article>
-                <form style="position: relative" method="POST" action="../server/web/signup.php">
+                <form method="POST" action="../server/web/login.php">
                     <?php
                     session_start();
                     if(isset($_SESSION['error']))
-                        if(isset($_SESSION['error']))
-                        {
-                            echo '<h6 style="color:white;margin-bottom: 1rem;opacity: 1;top:-50px;background-color: red;border-radius: 5px;padding: 0.3rem 1rem">'.$_SESSION['error'].'</h6> ';
-                        }
-                    $_SESSION['error'] = null;
-                    session_abort();
+                    {
+                        echo '<h6 style="color:white;margin-bottom: 1rem;opacity: 1;top:-50px;background-color: red;border-radius: 5px;padding: 0.3rem 1rem">'.$_SESSION['error'].'</h6> ';
+                    }
+//                    $_SESSION['error'] = null;
+//                    session_abort();
                     ?>
                     <small><label for="login-email">Your email:</label></small>
-                    <input name="email" type="text" id="login-email" placeholder="Enter your email">
+                    <input type="text" name="email" id="login-email" placeholder="Enter your email">
                     <small><label for="login-pass">Password:</label></small>
-                    <input name="password" type="password" id="login-pass" placeholder="Enter your password">
-                    <small><label for="login-pass2">Confirm password:</label></small>
-                    <input name="confirm_password" type="password" id="login-pass2" placeholder="Enter your password again">
-                    <button type="submit">Sign up</button>
-
+                    <input type="password" name="password" id="login-pass" placeholder="Enter your password">
+                    <button type="submit">Sign in</button>
                 </form>
             </article>
         </section>

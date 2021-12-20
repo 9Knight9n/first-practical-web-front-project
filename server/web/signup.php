@@ -62,11 +62,11 @@ global $conn;
     if(empty($error)){
 
         $token = bin2hex(openssl_random_pseudo_bytes(16));
-        $hash_password = password_hash($password, PASSWORD_DEFAULT);
+        $hash_password = md5($password);
 
         echo "querying to database";
         // Prepare an insert statement
-        $sql = "INSERT INTO users (email, password, token) VALUES ('".$email."','".$password."','".$token."');";
+        $sql = "INSERT INTO users (email, password, token) VALUES ('".$email."','".$hash_password."','".$token."');";
 
 
         $result = mysqli_query($conn, $sql);
