@@ -75,8 +75,7 @@ global $conn;
         if ($result) {
             $_SESSION['token']=$token;
             mysqli_close($conn);
-            session_abort();
-            header('location: http://localhost/first-practical-web-front-project/index.html');
+            header('location: http://localhost/first-practical-web-front-project/index.php');
         } else {
             echo "Some Error happened";
         }
@@ -85,12 +84,8 @@ global $conn;
     {
         $_SESSION['error']=$error;
         mysqli_close($conn);
-        session_abort();
         header('location: http://localhost/first-practical-web-front-project/pages/signup.php');
     }
-
-    // Close connection
-//    mysqli_close($conn);
 
 
 

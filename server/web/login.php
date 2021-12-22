@@ -46,16 +46,14 @@ else{
     if (mysqli_num_rows($result) == 0) {
         $error = "username or password is wrong";
         $_SESSION['error']=$error;
-//        mysqli_close($conn);
-//        session_abort();
+        mysqli_close($conn);
         header('location: http://localhost/first-practical-web-front-project/pages/login.php');
     }
     else
     {
         $_SESSION['token']=$result;
-//        mysqli_close($conn);
-//        session_abort();
-        header('location: http://localhost/first-practical-web-front-project/index.html');
+        mysqli_close($conn);
+        header('location: http://localhost/first-practical-web-front-project/index.php');
     }
 }
 
