@@ -8,7 +8,7 @@ $result = mysqli_query($conn, $sql);
 var_dump($result);
 if (!$result)
 {
-    $_SESSION['deleteTagError'] = "ابتدا باید سردسته را حذف کنید";
+    $_SESSION['deleteTagError'] = "ابتدا باید زیردسته ها را حذف کنید";
 }
 else
 {

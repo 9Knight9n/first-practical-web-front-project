@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Panel</title>
+        <link rel="stylesheet" href="../../css/reset.css">
+<!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="../../css/panel/panel.css">
+        <link rel="stylesheet" href="../../css/panel/manageTags.css">
+        <link rel="stylesheet" href="../../css/panel/managePosts.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body id="panel">
+
+        <section id="panel-content">
+            <article style="padding: 1rem;" class="add-tag">
+                <p style="text-align: right;margin-bottom: 1rem">افزودن دسته</p>
+                <div style="display: flex;flex-direction: row-reverse;justify-content: end;align-items: center">
+                    <label style="display: flex;flex-direction: row-reverse;text-align: right;margin-left:3rem">
+                        <p style="margin-left: 0.5rem">نام دسته را وارد کنید</p>
+                        <input type="text" required>
+                    </label>
+                    <label style="display: flex;flex-direction: row-reverse;text-align: right;margin-left:3rem">
+                        <p style="margin-left: 0.5rem">نام سر دسته را درصورت وجود وارد کنید</p>
+                        <input type="text">
+                    </label>
+                    <button>ایجاد دسته</button>
+                </div>
+            </article>
+            <hr>
+            <article class="table" style="margin: 0;padding: 1rem">
+                <!--                ToDo : fix h1 not working-->
+                <h5>مدیریت دسته ها</h5>
+                <table>
+                    <tr>
+                        <!--                        ToDo: reverse order with css not html-->
+                        <th>عملیات</th>
+<!--                        <th>تاریخ بروزرسانی</th>-->
+                        <th>تاریخ ساخت</th>
+<!--                        <th>سردسته</th>-->
+                        <th>نام دسته</th>
+                        <th>ردیف</th>
+                    </tr>
+                    <tr>
+                        <td ><div><button>حذف</button></div></td>
+<!--                        <td>1400/9/27</td>-->
+                        <td>1400/9/27</td>
+<!--                        <td>خلاصه مطلب اول</td>-->
+                        <td>مطلب اول</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <section class="right-sidebar">
+            <img src="../../assets/images/Jevelin_logo_dark.png" alt="Company Name">
+            <div ><a href="dashboard.html">داشبورد</a></div>
+            <div ><a >مدیریت مطالب</a>
+<!--                <p><</p>-->
+            </div>
+            <ul>
+                <li ><a href="addPosts.html">افزودن نوشته</a></li>
+                <li><a href="managePosts.html">مدیریت نوشته</a></li>
+                <li ><a href="recyclePosts.html">زباله دان</a></li>
+            </ul>
+            <div class="active"><a >مدریت دسته ها</a></div>
+            <div><a >مدیریت نظرات</a>
+<!--                <p><</p>-->
+            </div>
+            <ul>
+                <li>
+                    <a href="viewComments.html">مشاهده نظرات</a>
+                </li>
+            </ul>
+            <div><a href="settings.html">تنظیمات</a></div>
+        </section>
+
+    </body>
+    <script src="../../js/panel/rightPanel.js"></script>
+</html>

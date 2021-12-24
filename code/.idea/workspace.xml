@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1707e80b-7191-4dd4-b9fc-8e19896b398f" name="Changes" comment="add manageTags back">
+      <change beforePath="$PROJECT_DIR$/server/web/panel/deleteTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/web/panel/deleteTag.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Ubuntu PHP" />
+  <component name="ProjectId" id="22DvgGY4D75fn6Kr6sZTapjz6hj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="WSL" />
+    <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="WSL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\first-practical-web-front-project\server\web" />
+      <recent name="C:\MAMP\htdocs\first-practical-web-front-project\pages" />
+      <recent name="C:\MAMP\htdocs\first-practical-web-front-project\pages\panel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\first-practical-web-front-project\js" />
+      <recent name="C:\MAMP\htdocs\first-practical-web-front-project\css\panel" />
+      <recent name="C:\MAMP\htdocs\first-practical-web-front-project\pages\panel" />
+      <recent name="C:\MAMP\htdocs\first-practical-web-front-project\pages" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.Unnamed">
+    <configuration name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" nameIsGenerated="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Ubuntu PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" nameIsGenerated="true">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Script.Unnamed" />
+      <item itemvalue="PHP Web Page.Unnamed" />
+      <item itemvalue="PHPUnit.Unnamed" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1707e80b-7191-4dd4-b9fc-8e19896b398f" name="Changes" comment="" />
+      <created>1639385084417</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639385084417</updated>
+      <workItem from="1639385089129" duration="5324000" />
+      <workItem from="1639543615132" duration="19575000" />
+      <workItem from="1639802953748" duration="15529000" />
+      <workItem from="1639820751372" duration="743000" />
+      <workItem from="1639977965740" duration="15984000" />
+      <workItem from="1640148353532" duration="15531000" />
+      <workItem from="1640236537769" duration="1133000" />
+      <workItem from="1640255896477" duration="3476000" />
+    </task>
+    <task id="LOCAL-00001" summary="added right sidebar to panel">
+      <created>1639550365775</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639550365775</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added different pages for panel">
+      <created>1639555430729</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639555430729</updated>
+    </task>
+    <task id="LOCAL-00003" summary="finished add post html and css">
+      <created>1639562836554</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639562836554</updated>
+    </task>
+    <task id="LOCAL-00004" summary="finished manage post html and css">
+      <created>1639806649980</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639806649980</updated>
+    </task>
+    <task id="LOCAL-00005" summary="finished recycle post html and css">
+      <created>1639807406408</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639807406408</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finished view comments html and css">
+      <created>1639807573232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639807573232</updated>
+    </task>
+    <task id="LOCAL-00007" summary="finished manage tags html and css">
+      <created>1639809501000</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639809501000</updated>
+    </task>
+    <task id="LOCAL-00008" summary="applied some changes">
+      <created>1639811130608</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639811130608</updated>
+    </task>
+    <task id="LOCAL-00009" summary="applied some changes">
+      <created>1639813900941</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639813900941</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added server signup">
+      <created>1639990768342</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1639990768342</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added server login">
+      <created>1639992470301</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639992470301</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add manageTags back">
+      <created>1640163181778</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1640163181778</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added right sidebar to panel" />
+    <MESSAGE value="added different pages for panel" />
+    <MESSAGE value="finished add post html and css" />
+    <MESSAGE value="finished manage post html and css" />
+    <MESSAGE value="finished recycle post html and css" />
+    <MESSAGE value="finished view comments html and css" />
+    <MESSAGE value="finished manage tags html and css" />
+    <MESSAGE value="applied some changes" />
+    <MESSAGE value="added server signup" />
+    <MESSAGE value="added server login" />
+    <MESSAGE value="add manageTags back" />
+    <option name="LAST_COMMIT_MESSAGE" value="add manageTags back" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/panel/rightPanel.js</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
