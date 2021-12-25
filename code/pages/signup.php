@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +23,6 @@
             <article>
                 <form style="position: relative" method="POST" action="../server/web/signup.php">
                     <?php
-                    session_start();
                     if(isset($_SESSION['error']))
                         if(isset($_SESSION['error']))
                         {

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +23,6 @@
             <article>
                 <form method="POST" action="../server/web/login.php">
                     <?php
-                    session_start();
                     if(isset($_SESSION['error']))
                     {
                         echo '<h6 style="color:white;margin-bottom: 1rem;opacity: 1;top:-50px;background-color: red;border-radius: 5px;padding: 0.3rem 1rem">'.$_SESSION['error'].'</h6> ';

@@ -1,11 +1,11 @@
 <?php
+session_start();
 require_once '../../helper/dbconnect.php';
 require_once '../../helper/utils.php';
-session_start();
-echo $_POST['action'];
+//echo $_POST['action'];
 $sql = "DELETE FROM tags WHERE id={$_POST['action']}";
 $result = mysqli_query($conn, $sql);
-var_dump($result);
+//var_dump($result);
 if (!$result)
 {
     $_SESSION['deleteTagError'] = "ابتدا باید زیردسته ها را حذف کنید";

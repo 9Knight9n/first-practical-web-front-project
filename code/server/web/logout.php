@@ -1,4 +1,5 @@
 <?php
 session_start();
+require '../helper/utils.php';
 $_SESSION['token']=null;
-header('location: http://localhost/first-practical-web-front-project/index.php');
+header('location: '.base_url(true).$base_path.'index.php');

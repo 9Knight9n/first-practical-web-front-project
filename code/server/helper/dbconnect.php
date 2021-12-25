@@ -1,9 +1,9 @@
-<pre>
 <?php
 
 
 //  variables
-    $host = 'localhost';
+//    $host = 'localhost';
+    $host = 'db';
     $username = 'root';
     $password = 'root';
     $database_name = 'first_practical_web_project';
@@ -17,7 +17,6 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    echo "Connected successfully","\n";
+//    echo "Connected successfully","\n";
 
 ?>
-</pre>

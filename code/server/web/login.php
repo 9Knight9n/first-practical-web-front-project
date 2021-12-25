@@ -1,7 +1,7 @@
-<pre>
 <?php
+session_start();
 require '../helper/dbconnect.php';
-
+require '../helper/utils.php';
 
 global $conn;
 
@@ -9,7 +9,6 @@ global $conn;
 $email = $password = "";
 $error = '';
 
-session_start();
 $_SESSION['error']=null;
 
 //header('location: http://localhost/first-practical-web-front-project/pages/signup.html');
@@ -21,7 +20,7 @@ if(empty(trim($_POST["email"]))){
 //    mysqli_close($conn);
 //    session_abort();
 //    echo $_SESSION['error'];
-    header('location: http://localhost/first-practical-web-front-project/pages/login.php');
+    header('location: '.base_url(true).$base_path.'pages/login.php');
 }
 
 
@@ -35,8 +34,8 @@ else{
     $result = mysqli_query($conn, $sql);
 
 
-    var_dump($result);
-    echo $sql;
+//    var_dump($result);
+//    echo $sql;
     if (!$result)
     {
         echo("Error description: " . mysqli_error(conn));
@@ -47,13 +46,15 @@ else{
         $error = "username or password is wrong";
         $_SESSION['error']=$error;
         mysqli_close($conn);
-        header('location: http://localhost/first-practical-web-front-project/pages/login.php');
+        header('location: '.base_url(true).$base_path.'pages/login.php');
     }
     else
     {
         $_SESSION['token']=$result;
         mysqli_close($conn);
-        header('location: http://localhost/first-practical-web-front-project/index.php');
+//        echo $base_path;
+//        echo base_url(true);
+        header('location: '.base_url(true).$base_path.'index.php');
     }
 }
 
@@ -61,4 +62,3 @@ else{
 
 
 ?>
-</pre>

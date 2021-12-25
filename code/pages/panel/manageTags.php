@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,9 +39,8 @@
                     </label>
                     <button type="submit">ایجاد دسته</button>
                     <?php
-                        session_start();
                         $color = $_SESSION['addTagErrorColor']?:'red';
-                        if ($_SESSION['addTagError'] && !empty(trim($_SESSION['addTagError'])))
+                        if (key_exists('addTagError',$_SESSION) && $_SESSION['addTagError'] && !empty(trim($_SESSION['addTagError'])))
                             echo "<p style='color: {$color};margin-right: 1rem'>{$_SESSION['addTagError']}</p>";
                         $_SESSION['addTagErrorColor'] = null;
                         $_SESSION['addTagError'] = null;
@@ -54,7 +54,6 @@
                     <h5>مدیریت دسته ها</h5>
                     <?php
                         $color = 'red';
-                        session_start();
                         echo "<p style='color: {$color};margin-right: 3rem'>{$_SESSION['deleteTagError']}</p>";
                         $_SESSION['deleteTagError'] = null;
                     ?>

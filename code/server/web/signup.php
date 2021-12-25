@@ -1,6 +1,7 @@
-<pre>
 <?php
+session_start();
 require '../helper/dbconnect.php';
+require '../helper/utils.php';
 
 
 global $conn;
@@ -9,9 +10,6 @@ global $conn;
     $email = $password = $confirm_password = "";
     $error = '';
 
-     session_start();
-
-//header('location: http://localhost/first-practical-web-front-project/pages/signup.html');
 
     // Validate username
     if(empty(trim($_POST["email"]))){
@@ -21,40 +19,32 @@ global $conn;
 
     else{
         $email = trim($_POST["email"]);
-
         $sql = "SELECT * FROM users where email='".$email."';";
-
         $result = mysqli_query($conn, $sql);
-
-
-        var_dump($result);
-
         if (!$result)
         {
             echo("Error description: " . mysqli_error(conn));
         }
-
-
         if (mysqli_num_rows($result) > 0) {
                 $error = "This username is already taken.";
         }
     }
 
 //     Validate password
-    if(empty(trim($_POST["password"]))){
+    if(empty($error) && empty(trim($_POST["password"]))){
         $error = "Please enter a password.";
-    } elseif(strlen(trim($_POST["password"])) < 6){
-        $error = "Password must have atleast 6 characters.";
+    } elseif(empty($error) && strlen(trim($_POST["password"])) < 6){
+        $error = "Password must have at least 6 characters.";
     } else{
         $password = trim($_POST["password"]);
     }
 
     // Validate confirm password
-    if(empty(trim($_POST["confirm_password"]))){
+    if(empty($error) && empty(trim($_POST["confirm_password"]))){
         $error = "Please confirm password.";
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
-        if(empty($password_err) && ($password != $confirm_password)){
+        if(empty($error) && ($password != $confirm_password)){
             $error = "Password did not match.";
         }
     }
@@ -64,18 +54,19 @@ global $conn;
         $token = bin2hex(openssl_random_pseudo_bytes(16));
         $hash_password = md5($password);
 
-        echo "querying to database";
+//        echo "querying to database";
         // Prepare an insert statement
         $sql = "INSERT INTO users (email, password, token) VALUES ('".$email."','".$hash_password."','".$token."');";
 
 
         $result = mysqli_query($conn, $sql);
 
+//        var_dump($result);
 
         if ($result) {
             $_SESSION['token']=$token;
             mysqli_close($conn);
-            header('location: http://localhost/first-practical-web-front-project/index.php');
+            header('location: '.base_url(true).$base_path.'index.php');
         } else {
             echo "Some Error happened";
         }
@@ -84,10 +75,9 @@ global $conn;
     {
         $_SESSION['error']=$error;
         mysqli_close($conn);
-        header('location: http://localhost/first-practical-web-front-project/pages/signup.php');
+        header('location: '.base_url(true).$base_path.'pages/signup.php');
     }
 
 
 
 ?>
-</pre>

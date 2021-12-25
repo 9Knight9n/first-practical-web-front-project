@@ -1,9 +1,9 @@
-<pre>
 <?php
+    session_start();
     require_once '../../helper/dbconnect.php';
     require_once '../../helper/utils.php';
 
-    session_start();
+
     if (empty(trim($_POST['tag'])))
     {
         $_SESSION['addTagError'] = "لطفا نام دسته را وارد کنید";
@@ -14,7 +14,7 @@
         $sql = "SELECT * from tags where name='{$_POST['tag']}';";
 //        echo $sql,"\n";
         $result = mysqli_query($conn, $sql);
-        var_dump($result);
+//        var_dump($result);
         if (mysqli_num_rows($result)>0)
         {
             $_SESSION['addTagError'] = "دسته ای به این نام وجود دارد";
@@ -37,13 +37,13 @@
             }
             else
             {
-                echo "\n";
-                echo "\n";
+//                echo "\n";
+//                echo "\n";
                 if ($_POST['tagParent'] != 0)
                 {
                     $sql = "INSERT INTO tag_parent
                         VALUES ('".$last_id."','".$_POST['tagParent']."'); ";
-                    echo $sql;
+//                    echo $sql;
                     $result = mysqli_query($conn, $sql);
                     if (!$result)
                     {
@@ -80,4 +80,3 @@
      mysqli_close($conn);
 
 ?>
-</pre>

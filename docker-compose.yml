@@ -21,15 +21,28 @@ services:
   #   image: mailhog/mailhog:latest
   #   ports:
   #   - 8081:8025
+#  www:
+#    depends_on:
+#    - db
+##    environment:
+##      DOCKER_ON_READY: "docker-php-ext-install mysqli"
+##    command: bash -c "docker-php-ext-install mysqli"
+#    # - mail
+#    image: php:apache
+#    volumes:
+#    - "./code:/var/www/html"
+#    ports:
+#    - 8080:80
+
   www:
     depends_on:
-    - db
-    # - mail
-    image: php:apache
+      - db
+#    image: php:apache
+    build: "./"
     volumes:
-    - "./code:/var/www/html"
+      - "./code:/var/www/html"
     ports:
-    - 8080:80
+      - 8080:80
 
 volumes:
   database:

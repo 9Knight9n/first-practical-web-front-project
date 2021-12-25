@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +21,6 @@
                         <li><a href="service">Service</a></li>
                         <li><a href="examples/index.html">Examples</a></li>
                         <?php
-                            session_start();
                             if(isset($_SESSION['token']))
                             {
                                 echo '<li><a href="pages/panel/dashboard.html">Panel</a></li>';
