@@ -1,4 +1,8 @@
 <?php session_start();?>
+<?php
+require_once "../../server/models/Tags.php";
+//$tags = Tags::getInstance()
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,13 +30,10 @@
                         <select name="tagParent" >
                             <option value="0" selected>بدون سردسته</option>
                             <?php
-                                require_once '../../server/helper/dbconnect.php';
-                                $sql = "SELECT id,name from tags;";
-                                $result = mysqli_query($conn, $sql);
-                                $row = mysqli_fetch_all($result);
+                                $row = Tags::getInstance()->get("id,name,create_time");
                                 foreach ($row as $tag)
                                 {
-                                    echo "<option value='{$tag[0]}'>{$tag[1]}</option>";
+                                    echo "<option value='{$tag["id"]}'>{$tag["name"]}</option>";
                                 }
                             ?>
                         </select>
@@ -69,25 +70,22 @@
                         <th>ردیف</th>
                     </tr>
                     <?php
-                        require_once '../../server/helper/dbconnect.php';
-                        $sql = "SELECT id,name,create_time from tags;";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_all($result);
                         $count=1;
                         foreach ($row as $tag)
                         {
+//                            var_dump($tag);
                             echo "
                             <tr>
                                 <td>
                                     <div>
-                                        <button name='action' value='{$tag[0]}' type='submit'>
+                                        <button name='action' value='{$tag["id"]}' type='submit'>
                                             حذف 
                                         </button> 
                                             
                                     </div>
                                 </td>
-                                <td>{$tag[2]}</td>
-                                <td>{$tag[1]}</td>
+                                <td>{$tag["create_time"]}</td>
+                                <td>{$tag["name"]}</td>
                                 <td>{$count}</td>
                             </tr>
                             ";

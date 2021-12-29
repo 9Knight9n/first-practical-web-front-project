@@ -2,3 +2,4 @@ start composer : docker-compose up
 stop composer : docker-compose stop
 stop and purge states composer : docker-compose down
 to rebuild container : docker-compose up -d --no-deps --build <container_name>
+rebuild container : docker-compose up -d --no-deps --build www
