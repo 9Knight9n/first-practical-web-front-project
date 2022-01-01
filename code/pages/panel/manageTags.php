@@ -1,7 +1,6 @@
 <?php session_start();?>
 <?php
-require_once "../../server/models/Tags.php";
-//$tags = Tags::getInstance()
+require_once "../../server/models/Tag.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,7 @@ require_once "../../server/models/Tags.php";
         <section id="panel-content">
             <article style="padding: 1rem;" class="add-tag">
                 <p style="text-align: right;margin-bottom: 1rem">افزودن دسته</p>
-                <form method="POST" action="../../server/web/panel/addTags.php" style="display: flex;flex-direction: row-reverse;justify-content: end;align-items: center">
+                <form method="POST" action="../../server/controller/tag/addTags.php" style="display: flex;flex-direction: row-reverse;justify-content: end;align-items: center">
                     <label style="display: flex;flex-direction: row-reverse;text-align: right;margin-left:3rem">
                         <p style="margin-left: 0.5rem">نام دسته را وارد کنید</p>
                         <input name="tag" type="text">
@@ -30,7 +29,7 @@ require_once "../../server/models/Tags.php";
                         <select name="tagParent" >
                             <option value="0" selected>بدون سردسته</option>
                             <?php
-                                $row = Tags::getInstance()->get("id,name,create_time");
+                                $row = Tag::getInstance()->get("id,name,create_time");
                                 foreach ($row as $tag)
                                 {
                                     echo "<option value='{$tag["id"]}'>{$tag["name"]}</option>";
@@ -61,7 +60,7 @@ require_once "../../server/models/Tags.php";
                 </div>
 
                 <table>
-                    <form method='POST' action='../../server/web/panel/deleteTag.php'>
+                    <form method='POST' action='../../server/controller/tag/deleteTag.php'>
                     <tr>
 <!--                    ToDo: reverse order with css not html -->
                         <th>عملیات</th>

@@ -7,55 +7,57 @@ require_once getenv('BASE_DIR').'server/helper/db/config.php';
 
 abstract class Models {
 
-    protected static $lastId;
 
     protected static $tableName;
 
-    protected static $db;
+    protected $db;
 
     protected static $instance;
 
-    protected static $where;
+    protected $where;
 
     public function __construct($tableName)
     {
-        self::$db = DbProvider::getInstance(getConf()['dbType'])->getConn();
+        $this->db = DbProvider::getInstance(getConf()['dbType'])->getConn();
         self::$tableName = $tableName;
     }
 
-    public static function where($key,$value,$reset=null)
+    public function where($key,$value,$reset=null)
     {
         if ($reset)
-            self::$where = [];
-        self::$where[$key]=$value;
+            $this->where = [];
+        $this->where[$key]=$value;
         return self::$instance;
     }
 
-    public static function get($column=null)
+    public function get($column=null)
     {
-        $result = self::$db->selectRows(self::$tableName,$column,self::$db->calcWhere(self::$where));
-        self::$where = [];
+        $result = $this->db->selectRows(self::$tableName,$column, $this->db->calcSelectWhere($this->where));
+        $this->where = [];
         return $result;
     }
 
-    public static function find($id,$column=null)
+    public function find($id,$column=null)
     {
-        $tempWhere = self::$where;
-        self::where("id",$id);
-        $result = self::$db->selectRows(self::$tableName,$column,self::$db->calcWhere(self::$where));
-        self::$where = $tempWhere;
+        $tempWhere = $this->where;
+        $this->where("id",$id);
+        $result =  $this->db->selectRows(self::$tableName,$column, $this->db->calcSelectWhere($this->where));
+        $this->where = $tempWhere;
+        return count($result)>0?$result[0]:false;
+    }
+
+    public function delete($id)
+    {
+        return  $this->db->delete(self::$tableName,$id);
+    }
+
+
+    public function addRecord()
+    {
+        if (!isset($this->where) || count($this->where)==0)
+            return false;
+        $result = $this->db->addRecord(self::$tableName,$this->db->calcInsertWhere($this->where));
+        $this->where = [];
         return $result;
     }
-
-    public static function delete()
-    {
-
-    }
-
-
-//    public static function addRecord($values , $keys=null)
-//    {
-////        return self::$db->addRecord(self::$tableName,$values,$keys);
-//    }
-
 }
