@@ -27,12 +27,16 @@ require_once "../../server/models/Tag.php";
                     <label style="display: flex;flex-direction: row-reverse;text-align: right;margin-left:3rem">
                         <p style="margin-left: 0.5rem">سر دسته را انتخاب کنید</p>
                         <select name="tagParent" >
-                            <option value="0" selected>بدون سردسته</option>
+                            <option style='text-align: end' value="0" selected>بدون سردسته</option>
                             <?php
-                                $row = Tag::getInstance()->get("id,name,create_time");
+//                                $row = Tag::getInstance()->get("id,name,create_time");
+                                $row = Tag::getInstance()->getWithIndent();
                                 foreach ($row as $tag)
                                 {
-                                    echo "<option value='{$tag["id"]}'>{$tag["name"]}</option>";
+                                    echo "<option style='text-align: end' value='{$tag["id"]}'>{$tag["name"]}";
+                                    for ($index=0;$index<$tag['indent'];$index++)
+                                        echo " - ";
+                                    echo "</option>";
                                 }
                             ?>
                         </select>
