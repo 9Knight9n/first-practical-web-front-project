@@ -29,9 +29,10 @@ else{
     $password = trim($_POST["password"]);
     $hash_password = md5($password);
 
-    $sql = "SELECT token FROM users where email='".$email."'&& password='".$hash_password."';";
+    $sql = "SELECT token FROM users where email='".$email."'AND password='".$hash_password."';";
 
     $result = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_all ($result, MYSQLI_ASSOC);
 
 
 //    var_dump($result);
@@ -42,7 +43,7 @@ else{
     }
 
 
-    if (mysqli_num_rows($result) == 0) {
+    if (count($result) == 0) {
         $error = "username or password is wrong";
         $_SESSION['error']=$error;
         mysqli_close($conn);
@@ -50,7 +51,8 @@ else{
     }
     else
     {
-        $_SESSION['token']=$result;
+//        var_dump($result);
+        $_SESSION['token']=$result[0]['token'];
         mysqli_close($conn);
 //        echo $base_path;
 //        echo base_url(true);
