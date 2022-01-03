@@ -40,7 +40,7 @@ class Tag extends Models
             }
         }
 
-        var_dump($out);
+//        var_dump($out);
 
         $this->where = [];
         return $out;

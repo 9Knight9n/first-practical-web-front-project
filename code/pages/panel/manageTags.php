@@ -29,7 +29,6 @@ require_once "../../server/models/Tag.php";
                         <select name="tagParent" >
                             <option style='text-align: end' value="0" selected>بدون سردسته</option>
                             <?php
-//                                $row = Tag::getInstance()->get("id,name,create_time");
                                 $row = Tag::getInstance()->getWithIndent();
                                 foreach ($row as $tag)
                                 {
@@ -52,7 +51,7 @@ require_once "../../server/models/Tag.php";
                 </form>
             </article>
             <hr>
-            <article class="table" style="margin: 0;padding: 1rem;height: 80%;overflow-y: scroll">
+            <article class="table" style="margin: 0;padding: 1rem;height: 80%;overflow-y: auto">
                 <!--                ToDo : fix h1 not working-->
                 <div style="display: flex;flex-direction: row-reverse">
                     <h5>مدیریت دسته ها</h5>
@@ -107,7 +106,7 @@ require_once "../../server/models/Tag.php";
 <!--                <p><</p>-->
             </div>
             <ul>
-                <li ><a href="addPosts.html">افزودن نوشته</a></li>
+                <li ><a href="addPosts.php">افزودن نوشته</a></li>
                 <li><a href="managePosts.html">مدیریت نوشته</a></li>
                 <li ><a href="recyclePosts.html">زباله دان</a></li>
             </ul>

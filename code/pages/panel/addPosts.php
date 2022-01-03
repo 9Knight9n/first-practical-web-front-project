@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once "../../server/models/Tag.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,34 +20,30 @@
     <body id="panel">
 
         <section id="panel-content">
-            <form>
+            <form method="POST" action="../../server/controller/post/addPost.php">
                 <article class="left">
                     <button >ذخیره</button>
 
-                    <div>
+                    <div style="height: 80%;overflow-y: auto;">
                         <label>
                             دسته بندی را انتخاب کنید
                         </label>
-                        <label>
-                            A
-                            <input type="checkbox">
-                        </label>
-                        <label style="padding-right: 1rem">
-                            B
-                            <input type="checkbox">
-                        </label>
-                        <label>
-                            C
-                            <input type="checkbox">
-                        </label>
-                        <label style="padding-right: 1rem">
-                            D
-                            <input type="checkbox">
-                        </label>
-                        <label style="padding-right: 2rem">
-                            E
-                            <input type="checkbox">
-                        </label>
+                        <?php
+                            $row = Tag::getInstance()->getWithIndent();
+                            foreach ($row as $tag)
+                            {
+                                echo "<label style='display: flex;flex-direction: row-reverse;text-align:end;padding-right: {$tag['indent']}rem'>
+                                        <input name='tags[]' value='{$tag["id"]}' type='checkbox'>
+                                        {$tag["name"]}                                    
+                                    </label>";
+//                                echo "<option style='text-align: end' value='{$tag["id"]}'>{$tag["name"]}";
+//                                for ($index=0;$index<$tag['indent'];$index++)
+//                                    echo " - ";
+//                                echo "</option>";
+                            }
+
+
+                        ?>
                     </div>
 
 
