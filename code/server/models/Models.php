@@ -60,4 +60,9 @@ abstract class Models {
         $this->where = [];
         return $result;
     }
+
+    public function getLastId()
+    {
+        return $this->db->getLastId();
+    }
 }

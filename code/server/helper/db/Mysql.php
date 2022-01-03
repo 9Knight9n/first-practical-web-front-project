@@ -72,4 +72,9 @@ class Mysql implements ConfigDbInterface,QueryInterface {
         $sql = "INSERT INTO ".$tableName.$values[0]." VALUES ".$values[1].";";
         return mysqli_query($this->conn, $sql);
     }
+
+    public function getLastId()
+    {
+        return mysqli_insert_id($this->conn);
+    }
 }

@@ -6,4 +6,5 @@ interface QueryInterface{
     public function calcInsertWhere($where);
     public function delete($tableName,$id);
     public function addRecord($tableName,$values);
+    public function getLastId();
 }
