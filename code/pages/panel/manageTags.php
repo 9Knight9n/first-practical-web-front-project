@@ -14,10 +14,10 @@ require_once "../../server/models/Tag.php";
         <link rel="stylesheet" href="../../css/panel/managePosts.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body id="panel">
+    <body id="panel" style="height: 100vh;">
 
         <section id="panel-content">
-            <article style="padding: 1rem;" class="add-tag">
+            <article style="padding: 1rem;height: 20%" class="add-tag">
                 <p style="text-align: right;margin-bottom: 1rem">افزودن دسته</p>
                 <form method="POST" action="../../server/controller/tag/addTags.php" style="display: flex;flex-direction: row-reverse;justify-content: end;align-items: center">
                     <label style="display: flex;flex-direction: row-reverse;text-align: right;margin-left:3rem">
@@ -52,7 +52,7 @@ require_once "../../server/models/Tag.php";
                 </form>
             </article>
             <hr>
-            <article class="table" style="margin: 0;padding: 1rem">
+            <article class="table" style="margin: 0;padding: 1rem;height: 80%;overflow-y: scroll">
                 <!--                ToDo : fix h1 not working-->
                 <div style="display: flex;flex-direction: row-reverse">
                     <h5>مدیریت دسته ها</h5>
