@@ -42,20 +42,20 @@ require_once "../../server/controller/user/authUser.php"
 
                     <label style="cursor: pointer;margin: 2rem;text-align: center;">
                         برای انتخاب پوستر کلیک کنید
-                        <input style="margin-top: 1rem" type="file" name="poster" id="add-post-image" accept="image/png">
+                        <input style="margin-top: 1rem" type="file" name="poster" id="add-post-image" accept="image/png,image/jpg,image/jpeg">
                     </label>
 
                 </article>
                 <article class="right">
                     <label style="display: flex;flex-direction: column;text-align: right;margin-bottom: 3rem">تیتر را وارد کنید
-                        <input style="margin-top: 1rem" type="text">
+                        <input style="margin-top: 1rem" name="title" type="text">
                     </label>
 
                     <label style="text-align: right;height: 100%;">
                         <p style="margin-bottom: 1rem">
                             متن نوشته جدید را وارد کنید
                         </p>
-                        <textarea placeholder="متن خود را در اینجا بنویسید"></textarea>
+                        <textarea name="content" placeholder="متن خود را در اینجا بنویسید"></textarea>
                     </label>
                 </article>
             </form>
