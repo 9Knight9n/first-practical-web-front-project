@@ -1,0 +1,71 @@
+.modal > a {
+    width: fit-content;
+    background-color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    margin: 3rem 0;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
+
+.modal > a:hover{
+    color: var(--primary-color);
+    background-color: var(--secondary-text-color);
+}
+
+.modal .modal-window {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+.modal .modal-window:target {
+     visibility: visible;
+     opacity: 1;
+     pointer-events: auto;
+ }
+.modal .modal-window > div {
+      width: 400px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2em;
+      background: white;
+  }
+
+.modal .modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+.modal .modal-close:hover {
+     color: black;
+ }
+
+
+.modal .modal-window > div {
+      border-radius: 1rem;
+  }
+
+.modal .modal-window div:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+

@@ -23,7 +23,7 @@ require_once "../../server/controller/user/authUser.php"
                 <article class="left">
                     <button >ذخیره</button>
 
-                    <div style="height: 80%;overflow-y: auto;">
+                    <div style="max-height: 80%;overflow-y: auto;margin-bottom: 2rem">
                         <label>
                             دسته بندی را انتخاب کنید
                         </label>
@@ -39,21 +39,15 @@ require_once "../../server/controller/user/authUser.php"
                         ?>
                     </div>
 
+<!---->
+<!--                    <label style="cursor: pointer;margin: 2rem;text-align: center;">-->
+<!--                        برای انتخاب پوستر کلیک کنید-->
+<!--                        <input style="margin-top: 1rem" type="file" name="poster" id="add-post-image" accept="image/png,image/jpg,image/jpeg">-->
+<!--                    </label>-->
 
-                    <button type="button" onclick="document.getElementById('id01').style.display='block'"
-                            class="w3-button">Open Modal</button>
-
-                    <!-- The Modal -->
-                                    <div id="id01" class="w3-modal">
-                                        <div class="w3-modal-content">
-                                            <div class="w3-container">
-                      <span onclick="document.getElementById('id01').style.display='none'"
-                            class="w3-button w3-display-topright">&times;</span>
-                                                <p>Some text in the Modal..</p>
-                                                <p>Some text in the Modal..</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <?php
+                    require "../../common/modal/modal.php";
+                    ?>
 
                 </article>
                 <article class="right">
