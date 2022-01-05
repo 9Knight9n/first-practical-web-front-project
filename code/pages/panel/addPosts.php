@@ -2,7 +2,8 @@
 session_start();
 require_once "../../server/models/Tag.php";
 
-require_once "../../server/controller/user/authUser.php"
+require_once "../../server/controller/user/authUser.php";
+require_once "../../server/models/Media.php";
 
 ?>
 <!DOCTYPE html>
@@ -13,6 +14,7 @@ require_once "../../server/controller/user/authUser.php"
         <link rel="stylesheet" href="../../css/reset.css">
         <link rel="stylesheet" href="../../css/panel/panel.css">
         <link rel="stylesheet" href="../../css/panel/addPosts.css">
+        <link rel="stylesheet" href="../../css/common/modal/modal.css">
         <script src="../../js/tinymce.min.js"></script>
         <script>tinymce.init({selector:'textarea'});</script>
     </head>
@@ -39,15 +41,54 @@ require_once "../../server/controller/user/authUser.php"
                         ?>
                     </div>
 
-<!---->
-<!--                    <label style="cursor: pointer;margin: 2rem;text-align: center;">-->
-<!--                        برای انتخاب پوستر کلیک کنید-->
-<!--                        <input style="margin-top: 1rem" type="file" name="poster" id="add-post-image" accept="image/png,image/jpg,image/jpeg">-->
-<!--                    </label>-->
 
-                    <?php
-                    require "../../common/modal/modal.php";
-                    ?>
+                    <div class="modal">
+                        <a style="width: fit-content;height: 100%" href="#open-modal">انتخاب پوستر</a>
+                        <div id="open-modal" class="modal-window">
+                            <div style="height: 80%;width: 80%;border: blue solid 1px">
+                                <a href="#" title="Close" class="modal-close">Close</a>
+                                <div style=" margin: 1rem 0;align-items: center;display: flex;flex-direction: row-reverse;flex-wrap: wrap;height: 100%;width: 100%;overflow-y: auto">
+                                    <?php
+                                    $media = Media::getInstance()->get();
+                                    //                    var_dump($media);
+                                    require_once "../../server/helper/utils.php";
+
+
+                                    if(count($media) > 0){
+                                        foreach ($media as $medium){
+                                            echo "<div style='width: 50%;padding: 2rem;position:relative;'>";
+                                            echo show_image($medium["file_name"]);
+                                            echo "<button type='submit' name='mediaId' value='{$medium["id"]}' 
+                                                        style='margin-top: 1rem;position: absolute;height: 100%;width: 100%;background-color: transparent'></button>";
+                                            echo "</div>";
+                                        }
+                                    }else {
+                                        echo "<p>No image(s) found...</p>";
+                                    }
+                                    ?>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php
+                        if (isset($_SESSION["selectedFile"]))
+                        {
+                            foreach ($media as $medium){
+//                            $imageURL = $targetDir . $medium["file_name"];
+                                if ($medium["id"]==$_SESSION["selectedFile"])
+                                {
+                                    echo "<div style='width: 100%;padding: 0 2rem;'>";
+                                    echo show_image($medium["file_name"]);
+                                    echo "</div>";
+                                }
+                            }
+                            unset($_SESSION["selectedFile"]);
+                        }
+                        ?>
+
+                    </div>
+
+
 
                 </article>
                 <article class="right">

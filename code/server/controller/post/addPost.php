@@ -1,5 +1,12 @@
 <?php
-
+session_start();
+if (isset($_POST['mediaId']))
+{
+    $_SESSION['selectedFile'] = $_POST['mediaId'];
+    require_once '../../helper/utils.php';
+    unset($_POST['mediaId']);
+    header('location: '.base_url(true).$base_path.'pages/panel/addPosts.php');
+}
 
 
 if (!isset($_POST["tags"]) || count($_POST["tags"])==0)
