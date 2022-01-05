@@ -37,7 +37,7 @@
             else{
                 $imageURL = base_url(true)."server/static/image/default.png";
             }
-            return "<img style='width: 50%;padding: 2rem;' src='$imageURL' alt='' />";
+            return "<img style='width: 100%;height: 100%;' src='$imageURL' alt='' />";
         }
 
     }

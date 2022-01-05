@@ -31,7 +31,8 @@ require_once "../../server/models/Media.php";
                         برای انتخاب پوستر کلیک کنید
                     </label>
                 </form>
-                <div style="align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;height: 80%;width: 100%;overflow-y: auto">
+                <form method="POST" action="../../server/controller/media/deleteMedia.php"
+                        style="align-items: center;display: flex;flex-direction: row-reverse;flex-wrap: wrap;height: 80%;width: 100%;overflow-y: auto">
                     <?php
                     $media = Media::getInstance()->get();
 //                    var_dump($media);
@@ -41,13 +42,16 @@ require_once "../../server/models/Media.php";
                     if(count($media) > 0){
                         foreach ($media as $medium){
 //                            $imageURL = $targetDir . $medium["file_name"];
+                            echo "<div style='width: 50%;padding: 2rem;'>";
                             echo show_image($medium["file_name"]);
+                            echo "<button type='submit' name='mediaId' value='{$medium["id"]}' style='margin-top: 1rem'> delete </button>";
+                            echo "</div>";
                         }
                     }else {
                         echo "<p>No image(s) found...</p>";
                     }
                     ?>
-                </div>
+                </form>
             </article>
         </section>
 
