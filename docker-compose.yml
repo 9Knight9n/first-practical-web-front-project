@@ -19,22 +19,6 @@ services:
       MYSQL_ROOT_PASSWORD: root
       PMA_USER: root
       PMA_PASSWORD: root
-  # mail:
-  #   image: mailhog/mailhog:latest
-  #   ports:
-  #   - 8081:8025
-#  www:
-#    depends_on:
-#    - db
-##    environment:
-##      DOCKER_ON_READY: "docker-php-ext-install mysqli"
-##    command: bash -c "docker-php-ext-install mysqli"
-#    # - mail
-#    image: php:apache
-#    volumes:
-#    - "./code:/var/www/html"
-#    ports:
-#    - 8080:80
 
   www:
     depends_on:

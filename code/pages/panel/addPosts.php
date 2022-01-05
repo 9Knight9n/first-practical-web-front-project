@@ -40,10 +40,20 @@ require_once "../../server/controller/user/authUser.php"
                     </div>
 
 
-                    <label style="cursor: pointer;margin: 2rem;text-align: center;">
-                        برای انتخاب پوستر کلیک کنید
-                        <input style="margin-top: 1rem" type="file" name="poster" id="add-post-image" accept="image/png,image/jpg,image/jpeg">
-                    </label>
+                    <button type="button" onclick="document.getElementById('id01').style.display='block'"
+                            class="w3-button">Open Modal</button>
+
+                    <!-- The Modal -->
+                                    <div id="id01" class="w3-modal">
+                                        <div class="w3-modal-content">
+                                            <div class="w3-container">
+                      <span onclick="document.getElementById('id01').style.display='none'"
+                            class="w3-button w3-display-topright">&times;</span>
+                                                <p>Some text in the Modal..</p>
+                                                <p>Some text in the Modal..</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
                 </article>
                 <article class="right">
@@ -63,7 +73,7 @@ require_once "../../server/controller/user/authUser.php"
 
         <section class="right-sidebar">
             <img src="../../assets/images/Jevelin_logo_dark.png" alt="Company Name">
-            <div ><a href="dashboard.html">داشبورد</a></div>
+            <div ><a href="dashboard.php">داشبورد</a></div>
             <div ><a >مدیریت مطالب</a>
 <!--                <p><</p>-->
             </div>

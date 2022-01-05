@@ -27,5 +27,18 @@
     }
 
 
+    if (!function_exists('show_image')) {
+        function show_image($addr)
+        {
+            if (file_exists(getenv("BASE_DIR")."server/static/image/".$addr))
+            {
+                $imageURL = base_url(true)."server/static/image/" . $addr;
+            }
+            else{
+                $imageURL = base_url(true)."server/static/image/default.png";
+            }
+            return "<img style='width: 50%;padding: 2rem;' src='$imageURL' alt='' />";
+        }
 
+    }
 ?>

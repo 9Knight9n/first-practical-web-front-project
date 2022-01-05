@@ -100,7 +100,7 @@ require_once "../../server/models/Tag.php";
 
         <section class="right-sidebar">
             <img src="../../assets/images/Jevelin_logo_dark.png" alt="Company Name">
-            <div ><a href="dashboard.html">داشبورد</a></div>
+            <div ><a href="dashboard.php">داشبورد</a></div>
             <div ><a >مدیریت مطالب</a>
 <!--                <p><</p>-->
             </div>

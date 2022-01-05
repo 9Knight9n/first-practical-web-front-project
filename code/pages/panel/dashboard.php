@@ -26,6 +26,7 @@
                 <li><a href="recyclePosts.html">زباله دان</a></li>
             </ul>
             <div><a href="manageTags.php">مدریت دسته ها</a></div>
+            <div><a href="manageMedia.php">مدیریت محتوا</a></div>
             <div><a>مدیریت نظرات</a>
 <!--                <p><</p>-->
             </div>
