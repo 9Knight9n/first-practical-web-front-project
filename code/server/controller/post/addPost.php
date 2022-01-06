@@ -25,6 +25,14 @@ if (!isset($_POST["content"]) || empty(trim($_POST["content"])))
     $Error = 'لطفا نوشته را وارد کنین';
 }
 
+if (!isset($_POST["selectedMediaId"]) || empty(trim($_POST["selectedMediaId"])))
+{
+    $Error = 'لطفا پوستر را انتخاب کنید';
+}
+
+//echo ($_POST["selectedMediaId"]) ;
+//
+//var_dump($Error);
 //var_dump($_POST["content"]);
 //echo "<br>";
 //var_dump($_POST["title"]);
@@ -38,8 +46,7 @@ $userId = User::getInstance()->where("token",$_SESSION[getConstConf('sessionKey'
 //var_dump($userId);
 
 
-require_once "../../models/User.php";
-$mediaId = Media::getInstance()->where("file_name",$fileName)->get("id")[0]["id"];
+$mediaId = trim($_POST["selectedMediaId"]);
 //var_dump($mediaId);
 
 

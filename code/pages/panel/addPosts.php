@@ -80,6 +80,7 @@ require_once "../../server/models/Media.php";
                                     echo "<div style='width: 100%;padding: 0 2rem;'>";
                                     echo show_image($medium["file_name"]);
                                     echo "</div>";
+                                    echo "<input style='display: none' name='selectedMediaId' value='{$medium["id"]}'>";
                                 }
                             }
                             unset($_SESSION["selectedFile"]);
@@ -93,14 +94,17 @@ require_once "../../server/models/Media.php";
                 </article>
                 <article class="right">
                     <label style="display: flex;flex-direction: column;text-align: right;margin-bottom: 3rem">تیتر را وارد کنید
-                        <input style="margin-top: 1rem" name="title" type="text">
+                        <input style="margin-top: 1rem;text-align: right" name="title" type="text"
+                               value='<?php if(isset($_POST['title'])) {
+                                   echo $_POST['title'];
+                               } ?>'>
                     </label>
 
                     <label style="text-align: right;height: 100%;">
-                        <p style="margin-bottom: 1rem">
+                        <p style="margin-bottom: 1rem;">
                             متن نوشته جدید را وارد کنید
                         </p>
-                        <textarea name="content" placeholder="متن خود را در اینجا بنویسید"></textarea>
+                        <textarea style="text-align: right;" name="content" placeholder="متن خود را در اینجا بنویسید"></textarea>
                     </label>
                 </article>
             </form>
