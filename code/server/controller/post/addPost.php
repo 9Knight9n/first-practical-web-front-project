@@ -1,11 +1,26 @@
 <?php
 session_start();
-if (isset($_POST['mediaId']))
+
+require_once '../../helper/utils.php';
+
+$_SESSION['selectedMediaId']=isset($_POST["selectedMediaId"])?$_POST["selectedMediaId"]:null;
+$_SESSION['tags']=isset($_POST["tags"])?$_POST["tags"]:null;
+$_SESSION['title']=isset($_POST["title"])?$_POST["title"]:null;
+$_SESSION['content']=isset($_POST["content"])?$_POST["content"]:null;
+
+
+
+//if (isset($_POST['mediaId']))
+//{
+//    $_SESSION['selectedFile'] = $_POST['mediaId'];
+//    require_once '../../helper/utils.php';
+//    unset($_POST['mediaId']);
+//    header('location: '.base_url(true).$base_path.'pages/panel/addPosts.php');
+//}
+
+if (!isset($_POST["selectedMediaId"]) || empty(trim($_POST["selectedMediaId"])))
 {
-    $_SESSION['selectedFile'] = $_POST['mediaId'];
-    require_once '../../helper/utils.php';
-    unset($_POST['mediaId']);
-    header('location: '.base_url(true).$base_path.'pages/panel/addPosts.php');
+    $Error = 'لطفا پوستر را انتخاب کنید';
 }
 
 
@@ -25,20 +40,33 @@ if (!isset($_POST["content"]) || empty(trim($_POST["content"])))
     $Error = 'لطفا نوشته را وارد کنین';
 }
 
-if (!isset($_POST["selectedMediaId"]) || empty(trim($_POST["selectedMediaId"])))
+
+if (isset($Error))
 {
-    $Error = 'لطفا پوستر را انتخاب کنید';
+    $_SESSION["addPostError"] = $Error;
+    $_SESSION["addPostErrorColor"] = "red";
+    header('location: '.base_url(true).$base_path.'pages/panel/addPosts.php');
+    exit();
 }
+unset($_SESSION['selectedMediaId']);
+unset($_SESSION['tags']);
+unset($_SESSION['title']);
+unset($_SESSION['content']);
 
 //echo ($_POST["selectedMediaId"]) ;
+//echo "<br>";
+//var_dump($_POST);
+//echo "<br>";
 //
 //var_dump($Error);
+//echo "<br>";
 //var_dump($_POST["content"]);
 //echo "<br>";
 //var_dump($_POST["title"]);
 //echo "<br>";
 //
 //var_dump($_POST["tags"]);
+//exit();
 
 require_once getenv("BASE_DIR")."server/helper/constants.php";
 require_once "../../models/User.php";
@@ -68,6 +96,10 @@ foreach ($_POST["tags"] as $tag)
 {
     $postTag->where("id",(int)$postId)->where("tag_id",(int)$tag)->addRecord();
 }
+
+$_SESSION["addPostError"] = "نوشته با موفقیت اضافه شد";
+$_SESSION["addPostErrorColor"] = "black";
+header('location: '.base_url(true).$base_path.'pages/panel/addPosts.php');
 
 // Display status message
 //echo $Error;

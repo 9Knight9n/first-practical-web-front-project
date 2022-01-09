@@ -24,7 +24,13 @@ require_once "../../server/models/Media.php";
             <form method="POST" action="../../server/controller/post/addPost.php" enctype="multipart/form-data">
                 <article class="left">
                     <button >ذخیره</button>
-
+                    <?php
+                    if (isset($_SESSION["addPostError"]))
+                    {
+                        echo "<p style='color: {$_SESSION["addPostErrorColor"]}'>{$_SESSION["addPostError"]}</p>";
+                        unset($_SESSION["addPostError"]);
+                    }
+                    ?>
                     <div style="max-height: 80%;overflow-y: auto;margin-bottom: 2rem">
                         <label>
                             دسته بندی را انتخاب کنید
@@ -46,11 +52,10 @@ require_once "../../server/models/Media.php";
                         <a style="width: fit-content;height: 100%" href="#open-modal">انتخاب پوستر</a>
                         <div id="open-modal" class="modal-window">
                             <div style="height: 80%;width: 80%;border: blue solid 1px">
-                                <a href="#" title="Close" class="modal-close">Close</a>
+                                <a href="#" id="selectMediaModalCloseButton" title="Close" class="modal-close">Close</a>
                                 <div style=" margin: 1rem 0;align-items: center;display: flex;flex-direction: row-reverse;flex-wrap: wrap;height: 100%;width: 100%;overflow-y: auto">
                                     <?php
                                     $media = Media::getInstance()->get();
-                                    //                    var_dump($media);
                                     require_once "../../server/helper/utils.php";
 
 
@@ -58,7 +63,11 @@ require_once "../../server/models/Media.php";
                                         foreach ($media as $medium){
                                             echo "<div style='width: 50%;padding: 2rem;position:relative;'>";
                                             echo show_image($medium["file_name"]);
-                                            echo "<button type='submit' name='mediaId' value='{$medium["id"]}' 
+                                            $address=base_url(true)."server/static/image/".$medium["file_name"];
+                                            $id = "addPostMediaId-".$medium["id"];
+                                            echo "<button onclick='onMediaSelect(this)' type='button' 
+                                                        id='{$id}'
+                                                        name='{$address}' value='{$medium["id"]}' 
                                                         style='margin-top: 1rem;position: absolute;height: 100%;width: 100%;background-color: transparent'></button>";
                                             echo "</div>";
                                         }
@@ -70,22 +79,11 @@ require_once "../../server/models/Media.php";
 
                             </div>
                         </div>
-                        <?php
-                        if (isset($_SESSION["selectedFile"]))
-                        {
-                            foreach ($media as $medium){
-//                            $imageURL = $targetDir . $medium["file_name"];
-                                if ($medium["id"]==$_SESSION["selectedFile"])
-                                {
-                                    echo "<div style='width: 100%;padding: 0 2rem;'>";
-                                    echo show_image($medium["file_name"]);
-                                    echo "</div>";
-                                    echo "<input style='display: none' name='selectedMediaId' value='{$medium["id"]}'>";
-                                }
-                            }
-                            unset($_SESSION["selectedFile"]);
-                        }
-                        ?>
+
+                        <img id='addPostMediaPreview'  style='width: 100%;height: 100%;display: none' src='' />
+                        <input id="addPostMediaPreviewValue"
+                               value="<?php echo isset($_SESSION['selectedMediaId']) ? $_SESSION['selectedMediaId'] : '' ?>"
+                               name="selectedMediaId" style="display: none">
 
                     </div>
 
@@ -95,16 +93,18 @@ require_once "../../server/models/Media.php";
                 <article class="right">
                     <label style="display: flex;flex-direction: column;text-align: right;margin-bottom: 3rem">تیتر را وارد کنید
                         <input style="margin-top: 1rem;text-align: right" name="title" type="text"
-                               value='<?php if(isset($_POST['title'])) {
-                                   echo $_POST['title'];
-                               } ?>'>
+                               value='<?php echo isset($_SESSION['title']) ? $_SESSION['title'] : '' ?>'>
                     </label>
 
                     <label style="text-align: right;height: 100%;">
                         <p style="margin-bottom: 1rem;">
                             متن نوشته جدید را وارد کنید
                         </p>
-                        <textarea style="text-align: right;" name="content" placeholder="متن خود را در اینجا بنویسید"></textarea>
+                        <textarea style="text-align: right;" name="content" placeholder="متن خود را در اینجا بنویسید">
+                            <?php
+                                echo isset($_SESSION['content']) ? $_SESSION['content'] : ''
+                            ?>
+                        </textarea>
                     </label>
                 </article>
             </form>
@@ -135,4 +135,5 @@ require_once "../../server/models/Media.php";
 
     </body>
     <script src="../../js/panel/rightPanel.js"></script>
+    <script src="../../js/panel/selectMedia.js"></script>
 </html>
