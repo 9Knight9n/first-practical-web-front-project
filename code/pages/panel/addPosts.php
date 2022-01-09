@@ -36,11 +36,21 @@ require_once "../../server/models/Media.php";
                             دسته بندی را انتخاب کنید
                         </label>
                         <?php
+
                             $row = Tag::getInstance()->getWithIndent();
                             foreach ($row as $tag)
                             {
+//                                var_dump(array_values($_SESSION['tags']));
+//                                var_dump($tag["id"]);
+                                $checked = false;
+                                if (isset($_SESSION['tags']))
+                                {
+                                    $checked = in_array($tag["id"],array_values($_SESSION['tags']));
+                                    $checked = $checked?"checked":"";
+//                                    var_dump($checked);
+                                }
                                 echo "<label style='display: flex;flex-direction: row-reverse;text-align:end;padding-right: {$tag['indent']}rem'>
-                                        <input name='tags[]' value='{$tag["id"]}' type='checkbox'>
+                                        <input name='tags[]' value='{$tag["id"]}' type='checkbox' {$checked}>
                                         {$tag["name"]}                                    
                                     </label>";
                             }
