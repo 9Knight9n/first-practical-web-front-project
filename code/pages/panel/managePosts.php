@@ -1,3 +1,7 @@
+<?php session_start();?>
+<?php
+require_once "../../server/models/Post.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +19,8 @@
             <article class="table">
 <!--                ToDo : fix h1 not working-->
                 <h5>مدیریت مطالب</h5>
-                <table>
+                <table >
+                    <form method='POST' action='../../server/controller/tag/deleteTag.php'>
                     <tr>
 <!--                        ToDo: reverse order with css not html-->
                         <th>عملیات</th>
@@ -25,14 +30,45 @@
                         <th>عنوان</th>
                         <th>ردیف</th>
                     </tr>
-                    <tr>
-                        <td ><div><button>بروزرسانی</button><button>حذف</button></div></td>
-                        <td>1400/9/27</td>
-                        <td>1400/9/27</td>
-                        <td>خلاصه مطلب اول</td>
-                        <td>مطلب اول</td>
-                        <td>1</td>
-                    </tr>
+                    <?php
+                    $row = Post::getInstance()->get();
+//                    var_dump($row);
+                    $count=1;
+                    foreach ($row as $tag)
+                    {
+//                            var_dump($tag);
+                        $id = "row-".$count;
+                        echo "
+                            <tr>
+                                <td>
+                                    <div>
+                                        <button name='action' value='{$tag["id"]}' type='submit'>
+                                            بروزرسانی 
+                                        </button> 
+                                        <button name='action' value='{$tag["id"]}' type='submit'>
+                                            حذف 
+                                        </button> 
+                                    </div>
+                                </td>
+                                <td>{$tag["edit_time"]}</td>
+                                <td>{$tag["create_time"]}</td>
+                                <td >
+                                            <div id='{$id}' style=' text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            max-width: 200px;
+                                            overflow: hidden;'>
+                                            {$tag["content"]}
+                                            </div>
+                                            
+                                </td>
+                                <td>{$tag["title"]}</td>
+                                <td>{$count}</td>
+                            </tr>
+                            ";
+                        $count++;
+                    }
+                    ?>
+                    </form>
                 </table>
             </article>
         </section>
@@ -62,4 +98,19 @@
 
     </body>
     <script src="../../js/panel/rightPanel.js"></script>
+
+<script>
+
+    let index = 1;
+    while (true)
+    {
+        let divContent = document.getElementById("row-"+index);
+        if (!divContent)
+            break
+        divContent.innerHTML = divContent.textContent;
+
+        index++;
+    }
+
+</script>
 </html>
