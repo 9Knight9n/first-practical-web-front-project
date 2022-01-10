@@ -9,7 +9,7 @@
 
     if (empty(trim($_POST['tag'])))
     {
-        echo "isi";
+//        echo "isi";
         $_SESSION['addTagError'] = "لطفا نام دسته را وارد کنید";
         $_SESSION['addTagErrorColor'] = "red";
     }

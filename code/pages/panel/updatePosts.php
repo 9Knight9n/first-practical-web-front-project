@@ -21,13 +21,13 @@ require_once "../../server/models/Media.php";
     <body id="panel">
 
         <section id="panel-content">
-            <form method="POST" action="../../server/controller/post/addPost.php" enctype="multipart/form-data">
+            <form method="POST" action="../../server/controller/post/updatePost.php" enctype="multipart/form-data">
                 <article class="left">
-                    <button >ذخیره</button>
+                    <button >بروزرسانی</button>
                     <?php
                     if (isset($_SESSION["addPostError"]))
                     {
-                        echo "<p style='color: {$_SESSION["addPostErrorColor"]}'>{$_SESSION["addPostError"]}</p>";
+                        echo "<p style='color: {$_SESSION["updatePostErrorColor"]}'>{$_SESSION["updatePostError"]}</p>";
                         unset($_SESSION["addPostError"]);
                     }
                     ?>
@@ -127,8 +127,9 @@ require_once "../../server/models/Media.php";
 <!--                <p><</p>-->
             </div>
             <ul class="active-sub">
-                <li class="active-sub"><a>افزودن نوشته</a></li>
+                <li><a href="addPosts.php">افزودن نوشته</a></li>
                 <li><a href="managePosts.php">مدیریت نوشته</a></li>
+                <li class="active-sub"><a>بروزرسانی نوشته</a></li>
                 <li><a href="recyclePosts.html">زباله دان</a></li>
             </ul>
             <div><a href="manageTags.php">مدریت دسته ها</a></div>

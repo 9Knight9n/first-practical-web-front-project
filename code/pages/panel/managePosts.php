@@ -20,7 +20,7 @@ require_once "../../server/models/Post.php";
 <!--                ToDo : fix h1 not working-->
                 <h5>مدیریت مطالب</h5>
                 <table >
-                    <form method='POST' action='../../server/controller/tag/deleteTag.php'>
+                    <form method='POST' action='../../server/controller/post/managePost.php'>
                     <tr>
 <!--                        ToDo: reverse order with css not html-->
                         <th>عملیات</th>
@@ -31,7 +31,7 @@ require_once "../../server/models/Post.php";
                         <th>ردیف</th>
                     </tr>
                     <?php
-                    $row = Post::getInstance()->get();
+                    $row = Post::getInstance()->where('is_deleted',0)->get();
 //                    var_dump($row);
                     $count=1;
                     foreach ($row as $tag)
@@ -42,10 +42,10 @@ require_once "../../server/models/Post.php";
                             <tr>
                                 <td>
                                     <div>
-                                        <button name='action' value='{$tag["id"]}' type='submit'>
+                                        <button name='update' value='{$tag["id"]}' type='submit'>
                                             بروزرسانی 
                                         </button> 
-                                        <button name='action' value='{$tag["id"]}' type='submit'>
+                                        <button name='delete' value='{$tag["id"]}' type='submit'>
                                             حذف 
                                         </button> 
                                     </div>

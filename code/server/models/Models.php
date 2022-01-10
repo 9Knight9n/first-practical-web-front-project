@@ -51,12 +51,26 @@ abstract class Models {
         return  $this->db->delete(self::$tableName,$id);
     }
 
+    public function delete2()
+    {
+        return  $this->db->delete2(self::$tableName,$this->db->calcSelectWhere($this->where));
+    }
+
 
     public function addRecord()
     {
         if (!isset($this->where) || count($this->where)==0)
             return false;
         $result = $this->db->addRecord(self::$tableName,$this->db->calcInsertWhere($this->where));
+        $this->where = [];
+        return $result;
+    }
+
+    public function update($id)
+    {
+        if (!isset($this->where) || count($this->where)==0)
+            return false;
+        $result = $this->db->update(self::$tableName,$id,$this->db->calcUpdateWhere($this->where));
         $this->where = [];
         return $result;
     }

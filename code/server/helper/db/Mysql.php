@@ -41,6 +41,19 @@ class Mysql implements ConfigDbInterface,QueryInterface {
         return $str;
     }
 
+    public function calcUpdateWhere($where)
+    {
+        if (!isset($where) || count($where)==0)
+            return null;
+        $keys = array_keys($where);
+        $str = $keys[0]." = ".(is_string($where[$keys[0]])?("'".$where[$keys[0]]."'"):$where[$keys[0]]);
+        for ($index=1;$index < count($where);$index++)
+        {
+            $str .= " , ".$keys[$index]." = ".(is_string($where[$keys[$index]])?("'".$where[$keys[$index]]."'"):$where[$keys[$index]])." ";
+        }
+        return $str;
+    }
+
     public function calcInsertWhere($where)
     {
         if (!isset($where) || count($where)==0)
@@ -67,6 +80,12 @@ class Mysql implements ConfigDbInterface,QueryInterface {
         return mysqli_query($this->conn, $sql);
     }
 
+    public function delete2($tableName,$conditions)
+    {
+        $sql = "DELETE FROM ".$tableName." WHERE ".$conditions.";";
+        return mysqli_query($this->conn, $sql);
+    }
+
     public function addRecord($tableName,$values)
     {
         $sql = "INSERT INTO ".$tableName.$values[0]." VALUES ".$values[1].";";
@@ -76,5 +95,11 @@ class Mysql implements ConfigDbInterface,QueryInterface {
     public function getLastId()
     {
         return mysqli_insert_id($this->conn);
+    }
+
+    public function update($tableName,$id,$values)
+    {
+        $sql = "UPDATE ".$tableName." SET  ".$values." WHERE id=".$id.";";
+        return mysqli_query($this->conn, $sql);
     }
 }
