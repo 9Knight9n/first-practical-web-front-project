@@ -45,7 +45,7 @@ require_once "../../server/models/Post.php";
                                         <button name='update' value='{$tag["id"]}' type='submit'>
                                             بروزرسانی 
                                         </button> 
-                                        <button name='delete' value='{$tag["id"]}' type='submit'>
+                                        <button name='recycle' value='{$tag["id"]}' type='submit'>
                                             حذف 
                                         </button> 
                                     </div>
@@ -82,7 +82,7 @@ require_once "../../server/models/Post.php";
             <ul class="active-sub">
                 <li ><a href="addPosts.php">افزودن نوشته</a></li>
                 <li class="active-sub"><a>مدیریت نوشته</a></li>
-                <li><a href="recyclePosts.html">زباله دان</a></li>
+                <li><a href="recyclePosts.php">زباله دان</a></li>
             </ul>
             <div><a href="manageTags.php">مدریت دسته ها</a></div>
             <div><a>مدیریت نظرات</a>

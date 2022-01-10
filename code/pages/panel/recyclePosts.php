@@ -1,3 +1,7 @@
+<?php session_start();?>
+<?php
+require_once "../../server/models/Post.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,25 +20,55 @@
             <!--                ToDo : fix h1 not working-->
             <h5>سطل زباله ی مطالب</h5>
             <table>
+                <form method='POST' action='../../server/controller/post/managePost.php'>
                 <tr>
                     <!--                        ToDo: reverse order with css not html-->
                     <th>عملیات</th>
-                    <th>تاریخ حذف</th>
                     <th>تاریخ بروزرسانی</th>
                     <th>تاریخ ثبت</th>
                     <th>خلاصه نوشته</th>
                     <th>عنوان</th>
                     <th>ردیف</th>
                 </tr>
-                <tr>
-                    <td ><div><button>بازیابی</button><button>حذف دایمی</button></div></td>
-                    <td>1400/9/27</td>
-                    <td>1400/9/27</td>
-                    <td>1400/9/27</td>
-                    <td>خلاصه مطلب اول</td>
-                    <td>مطلب اول</td>
-                    <td>1</td>
-                </tr>
+                <?php
+                $row = Post::getInstance()->where('is_deleted',1)->get();
+                //                    var_dump($row);
+                $count=1;
+                foreach ($row as $tag)
+                {
+//                            var_dump($tag);
+                    $id = "row-".$count;
+                    echo "
+                            <tr>
+                                <td>
+                                    <div>
+                                        <button name='restore' value='{$tag["id"]}' type='submit'>
+                                            بازیابی 
+                                        </button> 
+                                        <button name='delete' value='{$tag["id"]}' type='submit'>
+                                            حذف دایمی 
+                                        </button> 
+                                    </div>
+                                </td>
+                                <td>{$tag["edit_time"]}</td>
+                                <td>{$tag["create_time"]}</td>
+                                <td >
+                                            <div id='{$id}' style=' text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            max-width: 200px;
+                                            overflow: hidden;'>
+                                            {$tag["content"]}
+                                            </div>
+                                            
+                                </td>
+                                <td>{$tag["title"]}</td>
+                                <td>{$count}</td>
+                            </tr>
+                            ";
+                    $count++;
+                }
+                ?>
+                </form>
             </table>
         </article>
     </section>

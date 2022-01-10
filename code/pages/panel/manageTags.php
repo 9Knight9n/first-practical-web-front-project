@@ -107,7 +107,7 @@ require_once "../../server/models/Tag.php";
             <ul>
                 <li ><a href="addPosts.php">افزودن نوشته</a></li>
                 <li><a href="managePosts.php">مدیریت نوشته</a></li>
-                <li ><a href="recyclePosts.html">زباله دان</a></li>
+                <li ><a href="recyclePosts.php">زباله دان</a></li>
             </ul>
             <div class="active"><a >مدریت دسته ها</a></div>
             <div><a >مدیریت نظرات</a>

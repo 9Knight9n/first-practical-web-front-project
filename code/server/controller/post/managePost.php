@@ -4,10 +4,22 @@ require_once "../../models/PostTag.php";
 require_once '../../helper/utils.php';
 
 session_start();
+if (isset($_POST['recycle']))
+{
+    Post::getInstance()->where('is_deleted',1)->update($_POST['recycle']);
+    header('location: '.base_url(true).$base_path.'pages/panel/managePosts.php');
+}
+
 if (isset($_POST['delete']))
 {
     Post::getInstance()->delete($_POST['delete']);
-    header('location: '.base_url(true).$base_path.'pages/panel/managePosts.php');
+    header('location: '.base_url(true).$base_path.'pages/panel/recyclePosts.php');
+}
+
+if (isset($_POST['restore']))
+{
+    Post::getInstance()->where('is_deleted',0)->update($_POST['restore']);
+    header('location: '.base_url(true).$base_path.'pages/panel/recyclePosts.php');
 }
 
 else if (isset($_POST['update']))

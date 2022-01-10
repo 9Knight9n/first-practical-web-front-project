@@ -64,7 +64,7 @@ require_once "../../server/models/Media.php";
             <ul>
                 <li><a href="addPosts.php">افزودن نوشته</a></li>
                 <li><a href="managePosts.php">مدیریت نوشته</a></li>
-                <li><a href="recyclePosts.html">زباله دان</a></li>
+                <li><a href="recyclePosts.php">زباله دان</a></li>
             </ul>
             <div><a href="manageTags.php">مدریت دسته ها</a></div>
             <div class="active" ><a href="manageMedia.php">مدیریت محتوا</a></div>
