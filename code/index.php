@@ -24,6 +24,7 @@
                             if(isset($_SESSION['token']))
                             {
                                 echo '<li><a href="pages/panel/dashboard.php">Panel</a></li>';
+                                echo '<li><a href="pages/blog/postsList.php">Blog</a></li>';
                                 echo '<li><a href="server/web/logout.php">Log out</a></li>';
                             }
                             else
