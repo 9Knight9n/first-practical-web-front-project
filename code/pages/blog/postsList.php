@@ -28,7 +28,7 @@ require_once "../../server/models/Media.php";
                         {$post['content']}
                     </article>
                     <div class='post-show-more-container'></div>
-                    <button name='postId' type='submit' value='id' class='post-show-more'>
+                    <button name='postId' type='submit' value='{$post['id']}' class='post-show-more'>
                         نمایش بیشتر
                     </button>
                 </article>
