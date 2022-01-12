@@ -1,0 +1,69 @@
+:root {
+    --primary-color: #4033FF;
+    --primary-color-dark: #372bc7;
+    --secondary-color: #2d2da6;
+    --auxiliary-color : #EAEAFD;
+    --primary-text-color: #000000;
+    --primary-comment-color: #dcdcff;
+    --secondary-comment-color: #b4b4ff;
+    --secondary-text-color: #ffffff;
+    --max-z-index: 100;
+}
+
+.add-comment {
+
+}
+
+
+.comment-list{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--auxiliary-color);
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+.comment-list h3 {
+    align-self: end;
+}
+
+.comment-list article {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: solid 1px var(--secondary-comment-color);
+}
+
+.comment-list article p {
+    text-align: right;
+    white-space: pre-wrap;
+}
+
+.comment-list article div ~ article{
+    background-color: var(--primary-comment-color);
+}
+
+.comment-list article div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.comment-list article div button:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+
+}
+
+.comment-list article div button {
+    cursor: pointer;
+    align-self: start;
+    width: fit-content;
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    outline: none;
+}

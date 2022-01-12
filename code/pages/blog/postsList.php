@@ -37,7 +37,6 @@ require_once "../../server/models/Media.php";
                 </article>
             </section>
             ";
-
         }
 
 
