@@ -110,12 +110,13 @@ require_once "../../server/models/Tag.php";
                 <li ><a href="recyclePosts.php">زباله دان</a></li>
             </ul>
             <div class="active"><a >مدریت دسته ها</a></div>
+            <div><a href="manageMedia.php">مدیریت محتوا</a></div>
             <div><a >مدیریت نظرات</a>
 <!--                <p><</p>-->
             </div>
             <ul>
                 <li>
-                    <a href="viewComments.html">مشاهده نظرات</a>
+                    <a href="viewComments.php">مشاهده نظرات</a>
                 </li>
             </ul>
             <div><a href="settings.html">تنظیمات</a></div>

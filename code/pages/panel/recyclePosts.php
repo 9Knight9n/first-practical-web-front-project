@@ -85,12 +85,13 @@ require_once "../../server/models/Post.php";
                 <li class="active-sub"><a>زباله دان</a></li>
             </ul>
             <div><a href="manageTags.php">مدریت دسته ها</a></div>
+            <div><a href="manageMedia.php">مدیریت محتوا</a></div>
             <div><a>مدیریت نظرات</a>
 <!--                <p><</p>-->
             </div>
             <ul>
                 <li>
-                    <a href="viewComments.html">مشاهده نظرات</a>
+                    <a href="viewComments.php">مشاهده نظرات</a>
                 </li>
             </ul>
             <div><a href="settings.html">تنظیمات</a></div>

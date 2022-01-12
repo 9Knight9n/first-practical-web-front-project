@@ -1,3 +1,8 @@
+<?php session_start();?>
+<?php
+require_once "../../server/models/Comment.php";
+require_once "../../server/models/Post.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,25 +21,55 @@
             <!--                ToDo : fix h1 not working-->
             <h5>مشاهده نظرات</h5>
             <table>
+                <form method='POST' action='../../server/controller/comment/manageComment.php'>
                 <tr>
                     <!--                        ToDo: reverse order with css not html-->
                     <th>عملیات</th>
-                    <th>تاریخ تایید</th>
+                    <th>وضعییت</th>
                     <th>تاریخ ثبت</th>
                     <th>متن نظر</th>
-                    <th>وضعییت</th>
-                    <th>خلاصه نوشته</th>
+                    <th>عنوان نوشته</th>
                     <th>ردیف</th>
                 </tr>
-                <tr>
-                    <td ><div><button>تایید</button><button>حذف</button></div></td>
-                    <td>1400/9/27</td>
-                    <td>1400/9/27</td>
-                    <td> متن نظر اول</td>
-                    <td> تایید شده</td>
-                    <td> متن نوشته </td>
-                    <td>1</td>
-                </tr>
+                <?php
+                $row = Comment::getInstance()->get();
+                $count=1;
+                foreach ($row as $tag)
+                {
+                    $post = Post::getInstance()->find((int)$tag["post_id"]);
+                    $status = $tag["accepted"]? "تایید شده" : "در انتظار تایید";
+                    echo "
+                            <tr>
+                                <td>
+                                    <div>";
+                    if ($tag["accepted"] == 0)
+                        echo "<button name='accept' value='{$tag["id"]}' type='submit'>
+                                            تایید 
+                                        </button> ";
+                    else
+                        echo "<button name='reject' value='{$tag["id"]}' type='submit'>
+                                            رد
+                                        </button> ";
+                    echo "              <button name='delete' value='{$tag["id"]}' type='submit'>
+                                            حذف 
+                                        </button> 
+                                    </div>
+                                </td>
+                                <td>{$status}</td>
+                                <td>{$tag["create_time"]}</td>
+                                <td >
+                                    {$tag["content"]} 
+                                </td>
+                                <td >
+                                    {$post["title"]}    
+                                </td>
+                                <td>{$count}</td>
+                            </tr>
+                            ";
+                    $count++;
+                }
+                ?>
+                </form>
             </table>
         </article>
     </section>
@@ -51,6 +86,7 @@
                 <li ><a href="recyclePosts.php">زباله دان</a></li>
             </ul>
             <div><a href="manageTags.php">مدریت دسته ها</a></div>
+            <div><a href="manageMedia.php">مدیریت محتوا</a></div>
             <div><a>مدیریت نظرات</a>
 <!--                <p><</p>-->
             </div>

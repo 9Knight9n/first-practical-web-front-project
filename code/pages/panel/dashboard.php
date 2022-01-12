@@ -32,7 +32,7 @@
             </div>
             <ul>
                 <li>
-                    <a href="viewComments.html">مشاهده نظرات</a>
+                    <a href="viewComments.php">مشاهده نظرات</a>
                 </li>
             </ul>
             <div><a href="settings.html">تنظیمات</a></div>
