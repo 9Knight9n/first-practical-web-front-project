@@ -30,13 +30,19 @@ require_once "../../server/models/Media.php";
                     <article class='post-content'>
                         {$post['content']}
                     </article>
-                   
+                    <form action='post.php' method='GET' style='align-self: start'>
+                    <input type='hidden' name='postId' value='{$_GET['postId']}'>
+                    <button type='submit' name='commentId' value='-1'>
+                        نظر دادن
+                    </button>
+                    </form>
                 </article>
                 <article class='post-image'>
                     {$image}
-                </article>
-            </section>
-            ";
+                </article>";
+            echo "</section>";
+            if (isset($_GET['commentId']) && $_GET['commentId']==-1)
+                require "comment.php";
 
 
             require "commentList.php";

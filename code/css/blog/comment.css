@@ -10,8 +10,33 @@
     --max-z-index: 100;
 }
 
-.add-comment {
+.add-comment .tox-editor-header{
+    background-color: white;
+    border-bottom: solid 1px;
+}
 
+.add-comment .tox-tinymce{
+    margin-top: 0;
+}
+
+.add-comment button{
+    margin-top: 1rem;
+    cursor: pointer;
+    align-self: start;
+    width: fit-content;
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    outline: none;
+    margin-bottom: 2rem;
+}
+
+.add-comment button:hover{
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
 }
 
 
@@ -48,6 +73,26 @@
     justify-content: space-between;
     margin-top: 2rem;
 }
+
+.post-text button {
+    cursor: pointer;
+    align-self: start;
+    width: fit-content;
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    outline: none;
+}
+
+.post-text button:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+
+}
+
 
 .comment-list article div button:hover{
     background-color: var(--primary-color);

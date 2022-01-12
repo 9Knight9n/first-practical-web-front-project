@@ -1,4 +1,5 @@
 <div class="comment-list">
+
     <h3> بخش نظرات</h3>
     <?php
     require_once "../../server/models/Comment.php";
@@ -10,16 +11,25 @@
         if (!isset($comments[$index]['parent_id']))
             echo "</article>";
         echo    "<article>
+                
                 <p >{$comments[$index]['content']}</p>
                 <div>
-                    <button>نظر دادن</button>
+                    <form action='post.php' method='GET'>
+                    <input type='hidden' name='postId' value='{$_GET['postId']}'>
+                    <button type='submit' name='commentId' value='{$comments[$index]['id']}'>
+                        نظر دادن
+                    </button>
+                    </form>
                     <small>{$comments[$index]['create_time']}</small>                 
                 </div>";
+        if (isset($_GET['commentId']) && $_GET['commentId']==$comments[$index]['id'])
+            require "comment.php";
         if (isset($comments[$index]['parent_id']))
             echo "</article>";
     }
 
     ?>
+
 
 </div>
 
